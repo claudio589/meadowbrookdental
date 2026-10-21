@@ -360,6 +360,13 @@ html body .src-n{font-weight:700;color:var(--navy)}
   .lhead{display:none}.lrow{grid-template-columns:64px minmax(0,1fr) 96px 44px 18px;padding:.5rem 1rem}.lc-ch,.lc-proc,.lc-rsn{display:none}}
 @media(max-width:640px){.calls-hdr{grid-template-columns:1fr}.calls-hdr .fp{justify-content:flex-start}.lrow{grid-template-columns:54px minmax(0,1fr) 84px 36px}.lc-x{display:none}
   .stg{grid-template-columns:110px minmax(40px,1fr) 40px}.ste{grid-column:1/-1;white-space:normal}.dmeta{grid-template-columns:1fr 1fr}.lsum .mut{margin-left:0}}
+.recbox{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;background:#fff;border:1px solid var(--border);border-radius:8px;padding:.55rem .7rem}
+.recbox audio{flex:1 1 260px;height:34px;min-width:0}
+.recbtn{font:inherit;font-size:12px;font-weight:700;color:#fff;background:var(--navy);border:none;border-radius:6px;padding:6px 12px;cursor:pointer}
+.recspd{display:flex;gap:4px}.recspd button{font:inherit;font-size:11px;font-weight:600;border:1px solid var(--border);background:#fff;color:#5B6B78;border-radius:5px;padding:3px 7px;cursor:pointer}
+.recspd button.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.orec{padding:0 1rem .8rem}.orec .recbox{background:#F8FAFC}
+@media print{.recbox,.orec{display:none !important}}
 @media print{.kcard,.ccard,.call-card,html body .src-wrap{box-shadow:none !important}#kstrip{grid-template-columns:repeat(6,1fr) !important}.cwrap{height:180px !important}}
 </style>
 </head>
@@ -2537,7 +2544,7 @@ function renderOps(){
       '<div class="owhy"><div class="olbl">Reason</div><div>'+(o.reasonMain?esc(o.reasonMain)+' <span class="mut">›</span> '+esc(o.reasonSub):'<span class="mut">--</span>')+'</div>'+
         (x.summary?'<div class="osum">'+esc(x.summary)+'</div>':'')+'</div>'+
       '<div class="oact"><div class="olbl">Next action</div><div>'+(action?esc(action):'<span class="mut">Review call</span>')+'</div></div>'+
-      '<div class="ometa">'+(o.score!=null?'<span>Front desk <b style="color:'+sc(o.score)+'">'+o.score+'</b></span>':'')+(x.lead_score!=null?'<span>Lead '+x.lead_score+'</span>':'')+'<a href="javascript:void(0)" onclick="goDF('+fi+')">View call →</a></div></div></div>';
+      '<div class="ometa">'+(o.score!=null?'<span>Front desk <b style="color:'+sc(o.score)+'">'+o.score+'</b></span>':'')+(x.lead_score!=null?'<span>Lead '+x.lead_score+'</span>':'')+'<a href="javascript:void(0)" onclick="goDF('+fi+')">View call →</a></div></div>'+(c.recording?'<div class="orec">'+recPlayer(c)+'</div>':'')+'</div>';
   }).join('');
   document.getElementById('opslist').innerHTML = bar + (cards || '<div class="empt">'+(calls.length?'No opportunities match these filters.':'Awaiting calls…')+'</div>');
 }
@@ -2569,7 +2576,31 @@ function setF(f,el){ activeF=f; document.querySelectorAll('#view-calls .pill').f
 function setSearch(v){ CL.search=(v||'').toLowerCase().trim(); renderCalls(); }
 function setSort(v){ CL.sort=v; renderCalls(); }
 function toggleRow(id){ CL.open[id]=!CL.open[id]; var c=calls.find(function(z){return z.id===id;}); if(c) refreshCard(c); }
-function refreshCard(c){ var el=document.getElementById('r-'+c.id); if(el) el.outerHTML = buildRow(c); }
+function refreshCard(c){ var el=document.getElementById('r-'+c.id); if(!el) return; var au=el.querySelector('audio'); if(au && !au.paused) return; el.outerHTML = buildRow(c); }
+
+// ── RECORDING PLAYBACK ───────────────────────────────────────────────────────
+// CallRail recording links are short-lived signed URLs, so they are fetched on
+// click (through the server proxy — the token never reaches the browser).
+var REC_URL = {};
+function recPlayer(c){
+  if(!c.recording) return '<div class="recbox mut">No recording on this call.</div>';
+  return '<div class="recbox" id="rec-'+c.id+'" onclick="event.stopPropagation()">'+
+    '<button class="recbtn" onclick="playRec(\''+c.id+'\')">▶ Play recording</button>'+
+    '<span class="mut">'+fmt(c.duration||0)+'</span></div>';
+}
+async function playRec(id){
+  var c=calls.find(function(z){return z.id===id;}); var box=document.getElementById('rec-'+id); if(!c||!box) return;
+  box.innerHTML='<span class="mut">Loading recording…</span>';
+  var url=REC_URL[id]; if(!url){ url=await getSignedUrl(c); if(url) REC_URL[id]=url; }
+  if(!url){ box.innerHTML='<span class="mut">Recording unavailable — open it in CallRail.</span>'; return; }
+  box.innerHTML='<audio controls autoplay preload="auto" src="'+esc(url)+'"></audio>'+
+    '<div class="recspd">'+[1,1.25,1.5,2].map(function(r){ return '<button class="'+(r===1?'on':'')+'" onclick="recSpeed(\''+id+'\','+r+',this)">'+r+'×</button>'; }).join('')+'</div>';
+  var au=box.querySelector('audio');
+  au.addEventListener('error',function(){ delete REC_URL[id]; box.innerHTML='<span class="mut">Recording link expired — </span><button class="recbtn" onclick="playRec(\''+id+'\')">Retry</button>'; });
+  document.querySelectorAll('audio').forEach(function(a){ if(a!==au) a.pause(); });   // one call at a time
+}
+function recSpeed(id,r,btn){ var box=document.getElementById('rec-'+id); var au=box&&box.querySelector('audio'); if(!au) return; au.playbackRate=r; box.querySelectorAll('.recspd button').forEach(function(b){b.classList.remove('on');}); btn.classList.add('on'); }
+
 
 var OUT_STYLE = {'New Appointment Booked':['Booked','#12805c','#E3F4EC'],'Rescheduled':['Rescheduled','#12805c','#E3F4EC'],'Confirmed Existing':['Confirmed','#185FA5','#E6F1FB'],
   'Not Booked':['Not booked','#B3261E','#FBEAEA'],'Referred Out':['Referred out','#8A5A12','#FBF3E4'],'Cancelled':['Cancelled','#7A4E73','#F4ECF3'],'Missed / No Answer':['Missed','#5B6B78','#EDF1F5']};
@@ -2636,7 +2667,7 @@ function buildDetail(c,o){
     (c._crnote?'<div class="crn"><b>CallRail note (reference only, not used for scoring):</b> '+esc(c._crnote)+'</div>':'')+'</div>';
   return '<div class="ldet">'+
     '<div class="dl">'+(x.summary?'<div class="dsum">'+esc(x.summary)+'</div>':'')+why+act+stages+'</div>'+
-    '<div class="dr"><div class="dmeta">'+meta+'</div><div class="dsh">Transcript</div>'+tx+
+    '<div class="dr"><div class="dmeta">'+meta+'</div><div class="dsh">Recording</div>'+recPlayer(c)+'<div class="dsh" style="margin-top:10px">Transcript</div>'+tx+
       (c.customer_phone_number?'<a class="dcall" href="tel:'+esc(c.customer_phone_number)+'" onclick="event.stopPropagation()">Call '+fmtPhone(c.customer_phone_number)+'</a>':'')+'</div></div>';
 }
 function renderCalls(){
