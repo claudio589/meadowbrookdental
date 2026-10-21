@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
     if (b.op === 'create') {
       r = await fetch('https://api.assemblyai.com/v2/transcript', {method:'POST',
         headers:{Authorization:key,'Content-Type':'application/json'},
-        body: JSON.stringify({audio_url: b.audio_url, language_detection:true})});
+        body: JSON.stringify({audio_url: b.audio_url, language_detection:true, speaker_labels:true})});
     } else if (b.op === 'status') {
       r = await fetch('https://api.assemblyai.com/v2/transcript/' + b.id, {headers:{Authorization:key}});
     } else return res.status(400).json({error:'bad op'});
