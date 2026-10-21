@@ -9,9 +9,15 @@ module.exports = async (req, res) => {
   try {
     let r;
     if (b.op === 'create') {
-      r = await fetch('https://api.assemblyai.com/v2/transcript', {method:'POST',
-        headers:{Authorization:key,'Content-Type':'application/json'},
-        body: JSON.stringify({audio_url: b.audio_url, language_detection:true, speaker_labels:true})});
+      const job = {audio_url: b.audio_url, language_detection:true, speaker_labels:true};
+      // Key terms (practice / location / insurer names) the model should hear correctly.
+      // Max 6 words per phrase; capped well under AssemblyAI's limit.
+      const terms = Array.isArray(b.keyterms) ? b.keyterms.map(t => String(t).trim()).filter(t => t && t.split(/\s+/).length <= 6).slice(0, 100) : [];
+      const create = body => fetch('https://api.assemblyai.com/v2/transcript', {method:'POST',
+        headers:{Authorization:key,'Content-Type':'application/json'}, body: JSON.stringify(body)});
+      r = await create(terms.length ? Object.assign({keyterms_prompt: terms}, job) : job);
+      // If the account/model rejects key terms, transcribe without them rather than fail.
+      if (terms.length && r.status === 400) r = await create(job);
     } else if (b.op === 'status') {
       r = await fetch('https://api.assemblyai.com/v2/transcript/' + b.id, {headers:{Authorization:key}});
     } else return res.status(400).json({error:'bad op'});
