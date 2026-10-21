@@ -251,6 +251,68 @@ html body .src-n{font-weight:700;color:var(--navy)}
   .crow>.ccard:last-child:nth-child(odd){grid-column:auto}
   .date-row{width:100%}#companySel{flex:1 1 100%}.date-row .date-input[type=date]{flex:1 1 0;min-width:0}
   .nav-btn{padding:.8rem .75rem}}
+
+/* v6 components */
+.crow.two{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+.crow.split{grid-template-columns:minmax(0,4fr) minmax(0,8fr)}
+.ccard.wide{min-width:0}
+.kcard[role=button]{cursor:pointer}.kcard[role=button]:hover{border-color:#B9C6D3}
+.funnel{display:flex;flex-direction:column;gap:12px;margin-top:4px}
+.fstep{cursor:default}.fstep[role=button]{cursor:pointer}
+.flbl{display:flex;justify-content:space-between;font-size:12px;color:#2B3A48;margin-bottom:4px}.flbl b{font-size:14px;color:var(--navy)}
+.fbar{height:10px;background:#EDF1F5;border-radius:5px;overflow:hidden}.fbar span{display:block;height:100%;background:var(--accent);border-radius:5px}
+.fsub{font-size:10.5px;color:var(--faint);margin-top:3px}
+.stages{display:flex;flex-direction:column;gap:7px;margin-top:2px}
+.srow{display:grid;grid-template-columns:minmax(130px,1.3fr) minmax(0,2fr) 44px 56px;align-items:center;gap:10px;cursor:pointer;padding:2px 4px;border-radius:6px}
+.srow:hover{background:#F6F8FA}
+.sname{font-size:12px;font-weight:600;color:#2B3A48;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.sname span{font-weight:400;color:var(--faint);font-size:10.5px;margin-left:6px}
+.sbar2{position:relative;height:8px;background:#EDF1F5;border-radius:4px}.sbar2 span{display:block;height:100%;border-radius:4px}
+.sbar2 i{position:absolute;top:-3px;bottom:-3px;width:1px;background:#7A8794}
+.sval{font-size:12.5px;font-weight:700;text-align:right}.sweak{font-size:10.5px;color:var(--faint);text-align:right}
+.drow{display:grid;gap:12px;margin-bottom:1rem}.drow.two{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.dcard{background:#fff;border:1px solid var(--border);box-shadow:var(--shadow);border-radius:var(--radius);padding:1rem 1.1rem;min-width:0}
+.dcard h3{font-size:11px;font-weight:700;color:var(--navy);letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.dscroll{overflow-x:auto;margin-top:.4rem}
+.dtab{width:100%;border-collapse:collapse;font-size:12.5px}
+.dtab th{font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:var(--faint);font-weight:700;text-align:left;padding:.45rem .6rem;border-bottom:1px solid var(--border);white-space:nowrap}
+.dtab td{padding:.5rem .6rem;border-bottom:1px solid var(--line-soft);vertical-align:middle}
+.dtab th.num,.dtab td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.dtab td.num.g{color:#12805c;font-weight:600}.dtab td.num.r{color:#C2413F;font-weight:600}
+.dtab tr.dmain td{font-weight:600}.dtab tr.dmain.open td{background:#F8FAFC}
+.dtab tr.dsub td{font-size:12px;color:#2B3A48;background:#FBFCFD}.dtab tr.dsub td.dl{padding-left:2.2rem}
+.dtab td.dl{white-space:nowrap;max-width:320px;overflow:hidden;text-overflow:ellipsis}
+.dtab td.dl a{color:var(--navy);text-decoration:none}.dtab td.dl a:hover{text-decoration:underline;color:var(--accent)}
+.dtog{width:20px;height:20px;border:1px solid var(--border);background:#fff;border-radius:4px;cursor:pointer;font-size:10px;color:#5B6B78;margin-right:8px;line-height:1;vertical-align:middle}
+.dtog-sp{display:inline-block;width:28px}
+.dbadge{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#B7791F;background:#FBF3E4;border-radius:10px;padding:1px 7px;margin-left:8px}
+.dtab td.conv{min-width:130px;white-space:nowrap}.dtab td.conv b{font-size:12px;margin-left:8px;display:inline-block;min-width:34px;text-align:right}
+.cbar{display:inline-block;vertical-align:middle;width:80px;height:7px;background:#EDF1F5;border-radius:4px;overflow:hidden}.cbar span{display:block;height:100%}
+.dtab td.top{font-size:11.5px;color:#5B6B78;max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:400}
+.empt-row{text-align:center;color:var(--faint);padding:1.5rem !important}
+.heat{display:grid;gap:3px;margin-top:.5rem}
+.hh,.hd{font-size:10px;color:var(--faint);text-align:center;align-self:center}.hd{text-align:left;font-weight:600}
+.hc{position:relative;height:26px;border-radius:4px;background:#F3F6F9;font-size:10.5px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.hc i{position:absolute;top:3px;right:3px;width:5px;height:5px;border-radius:50%;background:#C2413F}
+.lf{padding:.6rem 1rem;border-bottom:1px solid var(--line-soft);background:#fff}
+.lf-chip{display:inline-flex;align-items:center;gap:8px;font-size:12px;background:#E6F1FB;color:var(--navy);border-radius:16px;padding:4px 6px 4px 12px}
+.lf-chip button{border:none;background:#fff;border-radius:50%;width:20px;height:20px;cursor:pointer;color:#5B6B78}
+.obar{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;background:#fff;border:1px solid var(--border);box-shadow:var(--shadow);border-radius:var(--radius);padding:.75rem .9rem;margin-bottom:12px}
+.ochips{display:flex;flex-wrap:wrap;gap:6px}
+.ochip{font:inherit;font-size:11.5px;font-weight:600;border:1px solid var(--border);background:#fff;color:#2B3A48;border-radius:16px;padding:4px 10px;cursor:pointer}
+.ochip b{color:var(--faint);margin-left:4px}.ochip.on{background:var(--navy);border-color:var(--navy);color:#fff}.ochip.on b{color:#B8C3CE}
+.osels{display:flex;gap:10px;flex-wrap:wrap}.osel{font-size:11px;color:var(--faint);display:flex;align-items:center;gap:6px;font-weight:600}
+.osel select{font:inherit;font-size:12px;border:1px solid var(--border);border-radius:6px;padding:4px 8px;background:#fff;color:var(--navy)}
+.ocard{background:#fff;border:1px solid var(--border);border-left:4px solid;box-shadow:var(--shadow);border-radius:var(--radius);margin-bottom:10px;overflow:hidden}
+.ohead{display:flex;gap:12px;align-items:center;padding:.55rem 1rem;border-bottom:1px solid var(--line-soft);background:#FBFCFD;font-size:11px}
+.opri{font-weight:800;letter-spacing:.05em}.otype{font-weight:700;color:var(--navy)}.odt{margin-left:auto;color:var(--faint)}
+.obody{display:grid;grid-template-columns:minmax(160px,1fr) minmax(0,1.6fr) minmax(0,1.6fr) auto;gap:16px;padding:.8rem 1rem;align-items:start;font-size:12.5px}
+.owho{display:flex;flex-direction:column;gap:2px}.owho a{color:var(--accent);text-decoration:none;font-weight:600}.owho span{font-size:11px;color:var(--faint)}
+.olbl{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--faint);margin-bottom:3px}
+.osum{font-size:11.5px;color:#5B6B78;margin-top:4px;line-height:1.5}
+.ometa{display:flex;flex-direction:column;gap:4px;align-items:flex-end;font-size:11px;color:#5B6B78;white-space:nowrap}.ometa a{color:var(--accent);font-weight:600;text-decoration:none}
+.spk{color:var(--navy)}
+@media(max-width:1100px){.crow.two,.crow.split,.drow.two{grid-template-columns:minmax(0,1fr)}.obody{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.obody{grid-template-columns:1fr}.ometa{align-items:flex-start}.srow{grid-template-columns:minmax(0,1fr) 70px 40px}.sweak{display:none}}
 @media print{.kcard,.ccard,.call-card,html body .src-wrap{box-shadow:none !important}#kstrip{grid-template-columns:repeat(6,1fr) !important}.cwrap{height:180px !important}}
 </style>
 </head>
@@ -291,9 +353,10 @@ html body .src-n{font-weight:700;color:var(--navy)}
 
   <div id="view-overview" class="view active">
     <div class="kgrid" id="kstrip"></div>
+    <div class="crow two" id="ovTop"></div>
     <div id="srcNums"></div>
-    <div class="crow" id="cr1"></div>
-    <div class="crow" id="cr2"></div>
+    <div id="ovDrill"></div>
+    <div class="crow split" id="ovBottom"></div>
   </div>
 
   <div id="view-calls" class="view">
@@ -309,7 +372,7 @@ html body .src-n{font-weight:700;color:var(--navy)}
           <select id="drvSel" onchange="setDriver(this.value)" title="Filter the call log by driver / reason" style="margin-left:8px;font-size:11px;padding:3px 8px;border:1px solid #D9E0E7;border-radius:20px;background:#fff;color:#0D2132;cursor:pointer;max-width:300px"><option value="">All drivers</option></select>
         </div>
       </div>
-      
+      <div id="logFilter" class="lf" style="display:none"></div>
       <div id="clist"></div>
     </div>
   </div>
@@ -537,15 +600,84 @@ var AAI_KEY = '';
 //     keep the file private; a shared or hosted copy exposes a spendable key.
 var ANTHROPIC_API_KEY = '';
 var ANALYSIS_MODEL    = 'claude-opus-4-8';
-var ANALYSIS_VER      = 'v5';   // v5: full dental call-center disposition taxonomy (8 categories, ~42 sub-reasons) + category rollup + grouped filter
+var ANALYSIS_VER      = 'v6';   // v6: 8-stage front-desk scorecard, dental procedure taxonomy, main/secondary reasons (booked + not booked), opportunity buckets
 
-// Hardcoded driver taxonomy — the ONLY labels Claude may choose, so the
-// "Why booked / not booked" tiers and charts stay consistent across calls.
-var BOOKED_DRIVERS = ['Urgency Served','Insurance Cleared','Cost / Plan Resolved','Strong Agent Close','Complete Intake','Clear Need Matched','Appointment Secured','Existing Appointment Confirmed'];
+// ── TAXONOMIES (the ONLY labels Claude may choose) ───────────────────────────
+var PROCEDURE_TAXONOMY = {
+  'Preventive & Hygiene': ['New Patient Exam & Cleaning','Routine Cleaning / Recall','Comprehensive / Periodic Exam','X-Rays Only','Deep Cleaning (SRP)','Periodontal Maintenance','Fluoride / Sealants'],
+  'Emergency':            ['Toothache / Pain','Broken / Chipped Tooth','Swelling / Abscess / Infection','Lost Filling or Crown','Knocked-Out Tooth / Trauma','Emergency Exam (Unspecified)'],
+  'Restorative':          ['Filling / Cavity','Crown','Bridge','Inlay / Onlay','Root Canal'],
+  'Oral Surgery':         ['Extraction','Wisdom Teeth','Bone Graft / Sinus Lift'],
+  'Implants':             ['Single Implant','Multiple Implants','Full-Arch / All-on-X','Implant-Supported Denture','Implant Consult / Second Opinion'],
+  'Prosthodontics':       ['Complete Dentures','Partial Dentures','Denture Repair / Reline'],
+  'Cosmetic':             ['Whitening','Veneers','Bonding','Smile Makeover / Cosmetic Consult'],
+  'Orthodontics':         ['Invisalign / Clear Aligners','Braces','Retainers'],
+  'Periodontics':         ['Gum Disease Treatment','Gum Graft / Recession'],
+  'Pediatric':            ['Child Exam & Cleaning','Pediatric Treatment'],
+  'TMJ & Sleep':          ['Night Guard / Grinding','TMJ / Jaw Pain','Sleep Apnea Appliance'],
+  'Sedation & Anxiety':   ['Sedation Dentistry'],
+  'Non-Clinical':         ['Billing / Insurance Question','Records / Forms','Appointment Change Only','General Inquiry','Not Dental / Not Applicable']
+};
+var PROC_CAT = {}; Object.keys(PROCEDURE_TAXONOMY).forEach(function(k){ PROCEDURE_TAXONOMY[k].forEach(function(p){ PROC_CAT[p]=k; }); });
+var PROCEDURES = Object.keys(PROC_CAT);
+// Maps legacy / fallback-analyzer labels onto the taxonomy.
+function procCategoryOf(p){
+  if(!p || p==='Unknown') return 'Unclassified';
+  if(PROC_CAT[p]) return PROC_CAT[p];
+  var t=String(p).toLowerCase();
+  if(/emerg|pain|toothache|broken|chip|swell|abscess|infect|trauma/.test(t)) return 'Emergency';
+  if(/implant|all-on/.test(t)) return 'Implants';
+  if(/clean|hygiene|exam|x-?ray|check/.test(t)) return 'Preventive & Hygiene';
+  if(/crown|filling|cavity|root canal|bridge|onlay|inlay/.test(t)) return 'Restorative';
+  if(/extract|wisdom|surgery|graft/.test(t)) return 'Oral Surgery';
+  if(/denture/.test(t)) return 'Prosthodontics';
+  if(/whiten|veneer|cosmetic|bond|smile/.test(t)) return 'Cosmetic';
+  if(/invisalign|brace|ortho|aligner|retainer/.test(t)) return 'Orthodontics';
+  if(/gum|perio/.test(t)) return 'Periodontics';
+  if(/child|kid|pediatric/.test(t)) return 'Pediatric';
+  if(/tmj|guard|sleep|grind/.test(t)) return 'TMJ & Sleep';
+  if(/sedat|anxi/.test(t)) return 'Sedation & Anxiety';
+  return 'Non-Clinical';
+}
+
+var BOOKED_TAXONOMY = {
+  'Need & Urgency':             ['Urgent / Pain Served','Clear Need Matched','Same / Next-Day Availability'],
+  'Financial Clarity':          ['Insurance Verified / Accepted','Cost Explained / Self-Pay Accepted','Financing / Membership Plan'],
+  'Front Desk Excellence':      ['Strong Assumptive Close','Objection Overcome','Thorough Discovery & Rapport'],
+  'Convenience & Fit':          ['Preferred Time / Provider Offered','Location / Convenience'],
+  'Existing Patient Retention': ['Existing Appointment Confirmed','Rescheduled — Kept in Schedule','Recall / Reactivation Booked']
+};
+var BOOKED_CAT_ORDER = Object.keys(BOOKED_TAXONOMY);
+var BOOKED_DRIVERS = []; Object.keys(BOOKED_TAXONOMY).forEach(function(k){ BOOKED_DRIVERS = BOOKED_DRIVERS.concat(BOOKED_TAXONOMY[k]); });
 var LOST_DRIVERS   = ['Not a Patient Lead','Wrong Number / Misdial','Spam / Robocall','Vendor / Solicitation','Job Seeker / Recruiting','Existing-Patient Admin (No Appt)','Service Not Offered Here','Specialist / Provider Not Available','Out of Service Area','Population Not Served','Referred to Other Location','Insurance Objection — No Recovery','Insurance Barrier','Medicaid / State Plan Not Accepted','Insurance Question Unresolved','Out-of-Network Concern','Cost Objection — No Bridge','Cost Barrier','Price Shopping / Comparing','Sticker Shock — Deferred','Financing Not Secured','Availability Mismatch','Caller Schedule Conflict','Wait-Time Too Long','Requested Provider Unavailable','Language Barrier','Incomplete / Dropped Call','Poor Audio / Inaudible','Missed / Voicemail','Abandoned in Hold / Greeting','No Booking Attempt','Weak Discovery / Qualification','Objection Not Worked','Undecided — No Hold Secured','Incomplete Info Capture','Long Hold / Poor Experience','Information Gathering Only','Thinking It Over / Will Call Back','Cancelled — No Reschedule','Booking Elsewhere / Chose Competitor','Needs to Consult Others','Second Opinion Only'];
 var LOST_CAT_ORDER = ['Not a Valid Lead','Out of Scope','Insurance & Coverage','Cost & Financial','Scheduling & Availability','Communication & Connection','Handling Gap (Controllable)','Caller Not Ready'];
 var DRIVER_CATEGORY = {'Not a Patient Lead':'Not a Valid Lead','Wrong Number / Misdial':'Not a Valid Lead','Spam / Robocall':'Not a Valid Lead','Vendor / Solicitation':'Not a Valid Lead','Job Seeker / Recruiting':'Not a Valid Lead','Existing-Patient Admin (No Appt)':'Not a Valid Lead','Service Not Offered Here':'Out of Scope','Specialist / Provider Not Available':'Out of Scope','Out of Service Area':'Out of Scope','Population Not Served':'Out of Scope','Referred to Other Location':'Out of Scope','Insurance Objection — No Recovery':'Insurance & Coverage','Insurance Barrier':'Insurance & Coverage','Medicaid / State Plan Not Accepted':'Insurance & Coverage','Insurance Question Unresolved':'Insurance & Coverage','Out-of-Network Concern':'Insurance & Coverage','Cost Objection — No Bridge':'Cost & Financial','Cost Barrier':'Cost & Financial','Price Shopping / Comparing':'Cost & Financial','Sticker Shock — Deferred':'Cost & Financial','Financing Not Secured':'Cost & Financial','Availability Mismatch':'Scheduling & Availability','Caller Schedule Conflict':'Scheduling & Availability','Wait-Time Too Long':'Scheduling & Availability','Requested Provider Unavailable':'Scheduling & Availability','Language Barrier':'Communication & Connection','Incomplete / Dropped Call':'Communication & Connection','Poor Audio / Inaudible':'Communication & Connection','Missed / Voicemail':'Communication & Connection','Abandoned in Hold / Greeting':'Communication & Connection','No Booking Attempt':'Handling Gap (Controllable)','Weak Discovery / Qualification':'Handling Gap (Controllable)','Objection Not Worked':'Handling Gap (Controllable)','Undecided — No Hold Secured':'Handling Gap (Controllable)','Incomplete Info Capture':'Handling Gap (Controllable)','Long Hold / Poor Experience':'Handling Gap (Controllable)','Information Gathering Only':'Caller Not Ready','Thinking It Over / Will Call Back':'Caller Not Ready','Cancelled — No Reschedule':'Caller Not Ready','Booking Elsewhere / Chose Competitor':'Caller Not Ready','Needs to Consult Others':'Caller Not Ready','Second Opinion Only':'Caller Not Ready','Urgency Served':'Booked (Won)','Insurance Cleared':'Booked (Won)','Cost / Plan Resolved':'Booked (Won)','Strong Agent Close':'Booked (Won)','Complete Intake':'Booked (Won)','Clear Need Matched':'Booked (Won)','Appointment Secured':'Booked (Won)','Existing Appointment Confirmed':'Booked (Won)','Voicemail No Human':'Communication & Connection','Schedule No Fit':'Scheduling & Availability','Price Concern':'Cost & Financial','Wrong Number':'Not a Valid Lead','Service Not Offered':'Out of Scope','Referred / Other Location':'Out of Scope','Insurance Not Accepted':'Insurance & Coverage','Insurance Out Of Network':'Insurance & Coverage','Callback Needed':'Caller Not Ready','Unclassified Short Call':'Communication & Connection'};
+Object.keys(BOOKED_TAXONOMY).forEach(function(k){ BOOKED_TAXONOMY[k].forEach(function(d){ DRIVER_CATEGORY[d]=k; }); });
+// legacy v5 booked labels (local fallback analyzer) → v6 main categories
+Object.assign(DRIVER_CATEGORY, {'Urgency Served':'Need & Urgency','Clear Need Matched':'Need & Urgency','Insurance Cleared':'Financial Clarity','Cost / Plan Resolved':'Financial Clarity','Strong Agent Close':'Front Desk Excellence','Complete Intake':'Front Desk Excellence','Appointment Secured':'Front Desk Excellence','Existing Appointment Confirmed':'Existing Patient Retention'});
+var CONTROLLABLE_CATS = ['Handling Gap (Controllable)'];
 function driverCategory(label){ return DRIVER_CATEGORY[label] || (label ? 'Other' : ''); }
+
+var OPP_TYPES = ['Callback — Unbooked New Patient','Callback — Missed / Voicemail','Insurance / Financing Follow-up','Treatment / Consult Follow-up','Reschedule Recovery','Referral — Warm Handoff','Coaching — Front Desk Gap'];
+
+// ── FRONT-DESK SCORECARD (8 stages, weights sum to 100) ─────────────────────
+var STAGES = [
+  {key:'opening',             label:'Opening',                 max:5,  short:'Opening'},
+  {key:'greeting',            label:'Greeting',                max:10, short:'Greeting'},
+  {key:'discovery',           label:'Discovery questions',     max:20, short:'Discovery'},
+  {key:'objection',           label:'Objection handling',      max:15, short:'Objections'},
+  {key:'solution_finding',    label:'Finding the solution',    max:10, short:'Solution'},
+  {key:'solution_presenting', label:'Presenting the solution', max:10, short:'Presentation'},
+  {key:'closing',             label:'Closing',                 max:20, short:'Close'},
+  {key:'resolution',          label:'Issue resolution',        max:10, short:'Resolution'}
+];
+var STAGE_PROPS = {}; STAGES.forEach(function(st){
+  STAGE_PROPS[st.key] = {type:'object', properties:{
+    score:{type:'integer', description:'0-'+st.max+' points, awarded only for behaviour actually heard in the transcript.'},
+    na:{type:'boolean', description:'True ONLY when this stage genuinely could not apply to this call (see rules).'},
+    evidence:{type:'string', description:'Short verbatim quote (max ~15 words) proving the score, or "not observed".'}
+  }, required:['score','na','evidence']};
+});
 
 var ANALYSIS_TOOL = {
   name:'record_analysis',
@@ -554,45 +686,59 @@ var ANALYSIS_TOOL = {
     type:'object',
     properties:{
       outcome:{type:'string', enum:['New Appointment Booked','Rescheduled','Confirmed Existing','Referred Out','Not Booked','Cancelled']},
-      procedure:{type:'string', description:'Main dental need, e.g. Cleaning, Extraction, Root Canal, Crown, Implant, Denture, Emergency Pain, New Patient Exam, Orthodontics, Consultation, or Unknown.'},
+      patient_type:{type:'string', enum:['New Patient','Existing Patient','Unknown','Not a Patient']},
+      is_opportunity:{type:'boolean', description:'True when the caller was a real, in-principle bookable patient (new or existing) seeking dental care or an appointment. False for wrong numbers, spam, vendors, job seekers, pure admin/billing calls with no care need.'},
+      procedure:{type:'string', enum:PROCEDURES, description:'The single most specific dental need the caller called about.'},
       urgency:{type:'string', enum:['Emergency','High','Normal','Low']},
       lead_quality:{type:'string', enum:['hot','warm','cold']},
-      lead_score:{type:'integer', description:'0-100 estimate of how strong a lead the CALLER is (need + fit + intent). Independent of agent performance.'},
+      lead_score:{type:'integer', description:'0-100: strength of the CALLER as a lead (need + fit + intent). Independent of agent performance.'},
       sentiment:{type:'string', enum:['positive','neutral','negative']},
-      etiquette:{type:'integer', description:'Greeting & etiquette score, 0-15.'},
-      discovery:{type:'integer', description:'Discovery & probing score, 0-20.'},
-      resolution:{type:'integer', description:'First-call resolution & booking score, 0-30.'},
-      objection:{type:'integer', description:'Objection handling score, 0-15. Ignored when objection_na is true.'},
-      objection_na:{type:'boolean', description:'True if there was NO objection to handle (objection handling is then full credit / not applicable).'},
-      closing:{type:'integer', description:'Closing & next steps score, 0-20.'},
-      strengths:{type:'array', items:{type:'string'}, description:'1-4 short phrases naming what the agent did well.'},
-      drivers:{type:'array', description:'1-3 drivers explaining the outcome, PRIMARY cause first, chosen from the allowed set. Booked calls use why-it-converted drivers; not-booked use why-it-did-not.', items:{type:'object', properties:{label:{type:'string', enum: BOOKED_DRIVERS.concat(LOST_DRIVERS)}, detail:{type:'string', description:'One concise sentence explaining this driver for THIS call.'}}, required:['label','detail']}},
-      coaching:{type:'string', description:'One specific, actionable coaching tip for the agent — or empty string if the call was handled well or nothing was in the agent’s control (e.g. a correct referral, or a service not offered here).'},
-      flag_priority:{type:'string', enum:['high','medium','low','none'], description:'Coaching priority. none = no meaningful coaching gap.'},
-      flag_type:{type:'string', description:'Short label for the coaching flag, e.g. "High-Intent Lead Not Closed", "Insurance Objection — No Recovery", "Referral — No Warm Handoff", or empty if none.'},
-      agent_notes:{type:'string', description:'One or two sentences summarizing agent performance on this call.'}
+      language:{type:'string', enum:['English','Spanish','Other']},
+      insurance_mentioned:{type:'string', description:'Insurance carrier/plan named by the caller, "Self-pay", or "" if none mentioned.'},
+      pain_mentioned:{type:'boolean'},
+      stages:{type:'object', properties:STAGE_PROPS, required:STAGES.map(function(x){return x.key;})},
+      primary_reason:{type:'string', enum:BOOKED_DRIVERS.concat(LOST_DRIVERS), description:'The single main reason the call did or did not book (the SECONDARY category). Booked-type outcomes use a booked reason; others a not-booked reason.'},
+      primary_detail:{type:'string', description:'One sentence explaining the primary reason in this call.'},
+      contributing_reason:{type:'string', enum:['None'].concat(BOOKED_DRIVERS, LOST_DRIVERS), description:'A genuinely distinct second factor from the SAME set (booked vs not booked), or None.'},
+      strengths:{type:'array', items:{type:'string'}, description:'1-3 short phrases naming what the agent did well.'},
+      coaching:{type:'string', description:'One specific, actionable coaching tip, or empty string if nothing was in the agent’s control.'},
+      opportunity_type:{type:'string', enum:OPP_TYPES.concat(['None']), description:'The follow-up bucket this call belongs to, or None.'},
+      flag_priority:{type:'string', enum:['high','medium','low','none']},
+      flag_type:{type:'string', description:'Short label for the follow-up/coaching flag, or empty.'},
+      next_action:{type:'string', description:'The concrete next step for the office, e.g. "Call back today, offer Thursday AM new-patient exam and self-pay special", or empty.'},
+      summary:{type:'string', description:'One sentence: what the caller wanted and what happened.'},
+      agent_notes:{type:'string', description:'One or two sentences summarizing front-desk performance on this call.'}
     },
-    required:['outcome','urgency','lead_quality','lead_score','sentiment','etiquette','discovery','resolution','objection','objection_na','closing','strengths','drivers','coaching','flag_priority','flag_type','agent_notes']
+    required:['outcome','patient_type','is_opportunity','procedure','urgency','lead_quality','lead_score','sentiment','language','insurance_mentioned','pain_mentioned','stages','primary_reason','primary_detail','contributing_reason','strengths','coaching','opportunity_type','flag_priority','flag_type','next_action','summary','agent_notes']
   }
 };
 
 var ANALYSIS_PROMPT = [
-'You are a senior QA analyst for an elite dental practice’s front desk. You grade inbound phone calls (English or Spanish) on how well the agent handled them, and classify why each call did or did not convert to a booked appointment. Be fair and precise: reward good handling, and only flag coaching when there is a genuine, actionable gap the agent controlled.',
+'You are a strict QA auditor for a dental practice’s front desk. You grade inbound phone calls (English or Spanish) against a demanding front-desk standard and classify why each call did or did not convert. The transcript may label speakers (Speaker A / Speaker B): work out which speaker is the front desk from context.',
 '',
-'SCORECARD (score each dimension against its max; the five sum to 100):',
-'• Greeting & etiquette (0-15): branded greeting, agent gives their name, warm/courteous tone and close.',
-'• Discovery & probing (0-20): asked the reason for the call, captured name/DOB/phone, asked about insurance, probed the need (pain, which tooth, new vs existing patient).',
-'• First-call resolution & booking (0-30): did the agent resolve the reason for the call? Booking an appointment is full credit; a correct referral or a clearly answered question is partial credit.',
-'• Objection handling (0-15, CONTEXTUAL): if the caller raised an objection (insurance not accepted, cost, scheduling, hesitation), how well did the agent work it (self-pay/financing, alternative times, reassurance)? If there was NO objection, set objection_na=true (full credit — do not penalize).',
-'• Closing & next steps (0-20, CONTEXTUAL): assumptive close, offered specific times, secured a concrete next step (booked, tentative hold, warm handoff). If there was genuinely nothing to close (wrong number, service not offered here), award most of it.',
-'BALANCE: a cleanly-handled call should land ~85-95 without hitting every possible best practice. Genuine misses land lower. A booked call rarely scores below ~78.',
+'SCORING PHILOSOPHY — STRINGENT: award points only for behaviour you can point to in the transcript. Missing = 0 for that element. When in doubt, score lower. A competent but ordinary call lands 60-75; 85+ requires near-flawless execution on every applicable stage; 95+ is exceptional and rare. Never inflate a score because the call booked.',
 '',
-'DRIVERS — the ranked reasons for the outcome, PRIMARY (main cause) first. Choose ONLY from the allowed list and use the FEWEST drivers that genuinely apply:',
-'  • Always give exactly one PRIMARY driver: the single biggest reason the call did or did not convert.',
-'  • Add a SECONDARY only if a genuinely distinct second factor also materially contributed; add a TERTIARY only if a real third factor did. Do NOT pad — most calls have 1 driver, sometimes 2; three is rare.',
-'  • Outcome/driver consistency is mandatory: a Booked / Rescheduled / Confirmed-Existing outcome uses ONLY booked drivers; a Not Booked / Referred Out / Cancelled outcome uses ONLY not-booked drivers. Never mix the two sets.',
-'Booked drivers: Urgency Served, Insurance Cleared, Cost / Plan Resolved, Strong Agent Close, Complete Intake, Clear Need Matched, Appointment Secured, Existing Appointment Confirmed.',
-'Not-booked reasons — pick the SINGLE most specific sub-reason from the dental call-center categories below (do not invent labels):',
+'FRONT-DESK STAGES (score each; quote short verbatim evidence):',
+'1. OPENING (0-5): answered live without an unexplained hold or IVR loop; agent ready and present (no background chatter, no "hold on" before greeting). na only if the recording starts mid-call.',
+'2. GREETING (0-10): practice name (3), agent’s own name (3), warm offer to help e.g. "how can I help you today?" (2), friendly professional tone (2).',
+'3. DISCOVERY QUESTIONS (0-20): reason for call / chief concern (4), new vs existing patient (3), caller name + phone/DOB captured (4), insurance or payment method asked (4), clinical probing such as pain level, which tooth, how long, swelling, last visit (3), referral source "how did you hear about us" (2).',
+'4. OBJECTION HANDLING (0-15): when the caller raises price, insurance, timing, fear/anxiety or hesitation: acknowledge/empathize (4), clarify the real concern (3), respond with a concrete alternative such as self-pay/membership/financing, other times, reassurance about comfort/sedation (6), confirm the concern is resolved (2). na = true ONLY when the caller raised no objection at all.',
+'5. FINDING THE SOLUTION (0-10): matched the need to the right appointment type, provider and urgency, e.g. same-day emergency exam for pain, implant consult for missing teeth (6); checked feasibility such as availability and coverage (4).',
+'6. PRESENTING THE SOLUTION (0-10): clearly explained what the visit involves and its value to the caller (5); clear about cost / coverage / what to expect, without stalling (5).',
+'7. CLOSING (0-20): asked for the appointment (6), offered specific choices like "Tuesday 10am or Thursday 2pm?" (5), confirmed date/time and details back to the caller (5), secured a concrete next step when not booked such as a tentative hold, callback time or forms sent (4).',
+'8. ISSUE RESOLUTION (0-10): the caller’s actual question/issue was fully answered or resolved (6); recap and courteous close, caller knows exactly what happens next (4).',
+'NOT-APPLICABLE RULES: for non-opportunity calls (wrong number, spam, vendor, job seeker) mark discovery, objection, solution_finding, solution_presenting and closing na = true and grade opening, greeting and resolution only. For existing-patient admin calls (confirm / reschedule / billing) score what applies; closing is never na when a reschedule was possible.',
+'',
+'PROCEDURE: choose the single most specific procedure from the allowed list (e.g. "Full-Arch / All-on-X" rather than "Single Implant" when the caller is missing most teeth; "Toothache / Pain" for an emergency pain call). Non-clinical calls use the Non-Clinical labels.',
+'',
+'REASONS — MAIN and SECONDARY categories. You choose the SECONDARY reason (primary_reason); its MAIN category is fixed by the taxonomy below. Add contributing_reason only if a genuinely distinct second factor from the same set mattered; otherwise "None".',
+'Booked reasons (New Appointment Booked / Rescheduled / Confirmed Existing):',
+'  • Need & Urgency: Urgent / Pain Served; Clear Need Matched; Same / Next-Day Availability.',
+'  • Financial Clarity: Insurance Verified / Accepted; Cost Explained / Self-Pay Accepted; Financing / Membership Plan.',
+'  • Front Desk Excellence: Strong Assumptive Close; Objection Overcome; Thorough Discovery & Rapport.',
+'  • Convenience & Fit: Preferred Time / Provider Offered; Location / Convenience.',
+'  • Existing Patient Retention: Existing Appointment Confirmed; Rescheduled — Kept in Schedule; Recall / Reactivation Booked.',
+'Not-booked reasons (Not Booked / Referred Out / Cancelled):',
 '  • Not a Valid Lead: Not a Patient Lead; Wrong Number / Misdial; Spam / Robocall; Vendor / Solicitation; Job Seeker / Recruiting; Existing-Patient Admin (No Appt) (an existing patient calling about billing/records/forms, not booking).',
 '  • Out of Scope: Service Not Offered Here; Specialist / Provider Not Available; Out of Service Area; Population Not Served (an age/condition the office does not treat); Referred to Other Location.',
 '  • Insurance & Coverage: Insurance Objection — No Recovery (plan not accepted, no self-pay/alternative offered); Insurance Barrier (insurance issue but an alternative was discussed); Medicaid / State Plan Not Accepted; Insurance Question Unresolved (could not confirm benefits/coverage); Out-of-Network Concern.',
@@ -604,6 +750,8 @@ var ANALYSIS_PROMPT = [
 'Prefer a real external barrier (scope/insurance/cost/scheduling/communication/not-a-lead) over a Handling-Gap label; use Handling-Gap ONLY when an in-scope, bookable caller was lost through something the agent controlled.',
 'When a hard barrier is present (referral, service not offered here, wrong number, insurance, cost, availability), it is the SINGLE PRIMARY driver — do NOT add handling-gap drivers like No Booking Attempt or Weak Discovery on top of it.',
 '',
+'OPPORTUNITY BUCKET (opportunity_type): "Callback — Unbooked New Patient" (bookable new patient left without an appointment); "Insurance / Financing Follow-up" (lost or stalled on coverage/cost, follow up with options); "Treatment / Consult Follow-up" (thinking it over, needs to consult others, price-shopping a treatment); "Reschedule Recovery" (cancelled with no new date); "Referral — Warm Handoff" (referred out, confirm the handoff); "Coaching — Front Desk Gap" (booked or not, a controllable handling miss worth coaching); "Callback — Missed / Voicemail" (no live conversation). Use "None" when no follow-up or coaching is warranted. Set next_action to the concrete step the office should take.',
+'',
 'CRITICAL JUDGMENT RULES:',
 '• A caller who wanted to book but was not booked because the agent never attempted a close = "No Booking Attempt" (controllable; coach an assumptive close).',
 '• EXISTING-APPOINTMENT CALLS — do not confuse these with a new booking. A caller CANCELLING an existing appointment and NOT setting a new one = "Cancelled" (even when they say they will "call back later" to reschedule — no new appointment was secured). A caller who cancels AND sets a specific new date/time in the same call = "Rescheduled". A caller only confirming or verifying an existing appointment = "Confirmed Existing". NEVER label a cancellation or a reschedule request as "New Appointment Booked", and never credit an assumptive close when the only appointment discussed was a pre-existing one being cancelled.',
@@ -614,7 +762,8 @@ var ANALYSIS_PROMPT = [
 '• Wrong number, spam, vendor, or non-patient admin call = "Not a Patient Lead"; flag_priority = none.',
 '• Set flag_priority high ONLY when a genuinely bookable, in-scope caller was lost through a controllable gap (no close on a strong lead, urgent/pain caller not served, objection not worked).',
 '',
-'The transcript is the ONLY source of truth — ignore any CallRail summary or score. Spanish transcripts are common; grade them the same way. Respond by calling the record_analysis tool.'
+'',
+'The transcript is the ONLY source of truth; ignore any CallRail summary or score. Respond by calling the record_analysis tool.'
 ].join('\n');
 
 function clampI(n,lo,hi){ n=parseInt(n,10); if(isNaN(n))n=lo; return Math.max(lo,Math.min(hi,n)); }
@@ -657,39 +806,33 @@ function clearAnalysis(id){ try{ localStorage.removeItem('an:'+ANALYSIS_VER+':'+
 function adaptAnalysis(a, call){
   var booked = (a.outcome==='New Appointment Booked' || a.outcome==='Rescheduled');
   var confirmed = (a.outcome==='Confirmed Existing');
-  var d1=clampI(a.etiquette,0,15), d2=clampI(a.discovery,0,20), d3=clampI(a.resolution,0,30),
-      d4=a.objection_na?15:clampI(a.objection,0,15), d5=clampI(a.closing,0,20);
-  var agent_score=Math.max(5, Math.min(99, d1+d2+d3+d4+d5));
-  var scorecard=[
-    {key:'etiquette', label:'Greeting & etiquette', score:d1, max:15},
-    {key:'discovery', label:'Discovery & probing',  score:d2, max:20},
-    {key:'resolution',label:'Resolution & booking', score:d3, max:30},
-    {key:'objection', label:'Objection handling',   score:d4, max:15, na:!!a.objection_na},
-    {key:'closing',   label:'Closing & next steps', score:d5, max:20}
-  ];
-  // Enforce outcome/driver consistency: booked-type outcomes may carry only booked
-  // drivers, not-booked-type only not-booked drivers. Drop any mismatched label so a
-  // stray wrong-set driver can never surface as the primary reason.
+  var st = a.stages || {}, got = 0, possible = 0;
+  var scorecard = STAGES.map(function(d){
+    var v = st[d.key] || {}, na = !!v.na, sc = na ? 0 : clampI(v.score, 0, d.max);
+    if(!na){ got += sc; possible += d.max; }
+    return {key:d.key, label:d.label, short:d.short, score:sc, max:d.max, na:na, evidence:(v.evidence||'').trim()};
+  });
+  var agent_score = possible ? Math.round(got / possible * 100) : null;
   var allowSet = (booked || confirmed) ? BOOKED_DRIVERS : LOST_DRIVERS;
-  var drivers=(a.drivers||[]).map(function(x){ return {label:x.label, detail:x.detail}; })
-                .filter(function(x){ return allowSet.indexOf(x.label) >= 0; });
-  if(!drivers.length && (a.drivers||[]).length){ drivers=[{label:a.drivers[0].label, detail:a.drivers[0].detail}]; }
-  drivers=drivers.slice(0,3);
-  var primary=drivers[0]?drivers[0].label:null, secondary=drivers[1]?drivers[1].label:null, tertiary=drivers[2]?drivers[2].label:null;
-  var raw=call._txt||'';
-  var sents=raw.split('. ').filter(function(s){ return s.trim().length>15; });
+  var primary = a.primary_reason || null;
+  var contrib = (a.contributing_reason && a.contributing_reason!=='None' && allowSet.indexOf(a.contributing_reason)>=0 && a.contributing_reason!==primary) ? a.contributing_reason : null;
+  var drivers = []; if(primary) drivers.push({label:primary, detail:a.primary_detail||''}); if(contrib) drivers.push({label:contrib, detail:''});
+  var opp = (a.opportunity_type && a.opportunity_type!=='None') ? a.opportunity_type : null;
   return {
-    outcome:a.outcome, procedure:a.procedure||'Unknown', urgency:a.urgency||'Normal',
-    lead_quality:a.lead_quality||'warm', lead_score:clampI(a.lead_score,0,100), sentiment:a.sentiment||'neutral',
-    agent_score:agent_score, agent_notes:a.agent_notes||'',
-    summary:sents.slice(0,2).join('. ').trim(),
+    outcome:a.outcome, patient_type:a.patient_type||'Unknown', is_opportunity:!!a.is_opportunity,
+    procedure:a.procedure||'Unknown', procedure_category:procCategoryOf(a.procedure),
+    urgency:a.urgency||'Normal', lead_quality:a.lead_quality||'warm', lead_score:clampI(a.lead_score,0,100), sentiment:a.sentiment||'neutral',
+    language:a.language||'English', insurance:a.insurance_mentioned||'', pain:!!a.pain_mentioned,
+    agent_score:agent_score, agent_notes:a.agent_notes||'', summary:a.summary||'',
+    reason_main: primary ? driverCategory(primary) : null, reason_secondary: primary, reason_contributing: contrib,
     lost_reason:(!booked && !confirmed) ? primary : null,
     ops_opportunity:(a.coaching && a.coaching.trim()) ? a.coaching.trim() : null,
+    next_action:a.next_action||'', opportunity_type:opp,
     flag_priority:(a.flag_priority && a.flag_priority!=='none') ? a.flag_priority : null,
     flag_type:a.flag_type||null,
-    booked_driver: booked ? (drivers[0]?drivers[0].detail:null) : null,
-    lost_driver: (!booked && !confirmed) ? (drivers[0]?drivers[0].detail:null) : null,
-    drivers:drivers, primary_driver:primary, secondary_driver:secondary, tertiary_driver:tertiary,
+    booked_driver: booked ? (a.primary_detail||null) : null,
+    lost_driver: (!booked && !confirmed) ? (a.primary_detail||null) : null,
+    drivers:drivers, primary_driver:primary, secondary_driver:contrib, tertiary_driver:null,
     scorecard:scorecard, strengths:a.strengths||[],
     has_transcript:true, engine:'claude'
   };
@@ -699,10 +842,10 @@ function adaptAnalysis(a, call){
 async function analyzeWithClaude(call){
   try{
     var body={
-      model:ANALYSIS_MODEL, max_tokens:1500,
+      model:ANALYSIS_MODEL, max_tokens:3000,
       system:[{type:'text', text:ANALYSIS_PROMPT, cache_control:{type:'ephemeral'}}],
       tools:[ANALYSIS_TOOL], tool_choice:{type:'tool', name:'record_analysis'},
-      messages:[{role:'user', content:'Call metadata — answered: '+call.answered+', duration: '+(call.duration||0)+'s, source: '+(call.source_name||'')+'.\n\nTRANSCRIPT:\n'+(call._txt||'')}]
+      messages:[{role:'user', content:'Call metadata — answered: '+call.answered+', duration: '+(call.duration||0)+'s, source: '+(call.source_name||'')+', CallRail first-time caller: '+(call.first_call===true?'yes':call.first_call===false?'no':'unknown')+'.\n\nTRANSCRIPT:\n'+(call._txt||'')}]
     };
     var r=await apiPost('/analyze', {body:body});
     if(!r.ok){ console.error('[OM] Claude '+r.status+': '+(await r.text()).slice(0,200)); return null; }
@@ -712,7 +855,7 @@ async function analyzeWithClaude(call){
     var inp=tu.input;
     // Guard: a degenerate structured response (missing outcome or empty drivers)
     // falls back to the deterministic local analyzer instead of rendering blank.
-    if(!inp.outcome || !Array.isArray(inp.drivers) || !inp.drivers.length){ console.warn('[OM] incomplete Claude analysis — local fallback for', call.id); return null; }
+    if(!inp.outcome || !inp.primary_reason || !inp.stages){ console.warn('[OM] incomplete Claude analysis — local fallback for', call.id); return null; }
     return adaptAnalysis(inp, call);
   }catch(e){ console.error('[OM] Claude analysis failed:', e); return null; }
 }
@@ -803,7 +946,10 @@ async function aaiTranscribe(mp3Url) {
       var rp = await apiPost('/transcribe', {op:'status', id: job.id});
       if(!rp.ok) continue;
       var pd = await rp.json();
-      if(pd.status === 'completed') return pd.text || null;
+      if(pd.status === 'completed'){
+        if(pd.utterances && pd.utterances.length) return pd.utterances.map(function(u){ return 'Speaker '+u.speaker+': '+u.text; }).join('\n');
+        return pd.text || null;
+      }
       if(pd.status === 'error')     return null;
     }
   } catch(e){}
@@ -1510,24 +1656,6 @@ function ai(){ return calls.map(function(c){ return cache[c.id]; }).filter(funct
 // ── RENDER ────────────────────────────────────────────────────────────────────
 function render(){ renderKpis(); renderCharts(); renderCalls(); renderOps(); }
 
-function renderKpis(){
-  var a=ai(), t=calls.length, ans=calls.filter(function(c){return c.answered;}).length;
-  var bk=a.filter(function(x){return x.outcome==='New Appointment Booked';}).length;
-  var ag=a.length?Math.round(a.reduce(function(s,x){return s+(x.agent_score||0);},0)/a.length):null;
-  var ld=a.length?Math.round(a.reduce(function(s,x){return s+(x.lead_score||0);},0)/a.length):null;
-  var dur=t?Math.round(calls.reduce(function(s,c){return s+(c.duration||0);},0)/t):0;
-  var noTx=calls.filter(function(c){return !c._transcribed;}).length; // no transcript = not categorized
-  document.getElementById('kstrip').innerHTML=
-    '<div class="kcard acc"><div class="kval">'+t+'</div><div class="klbl">Total calls</div><div class="ksub">Google Ads + LSA</div></div>'+
-    '<div class="kcard"><div class="kval">'+pct(ans,t)+'%</div><div class="klbl">Answer rate</div><div class="ksub">'+ans+' answered</div></div>'+
-    '<div class="kcard"><div class="kval" style="color:'+(a.length?sc(pct(bk,a.length)):'var(--muted)')+'">'+
-      (a.length?pct(bk,a.length)+'%':'--')+'</div><div class="klbl">Booking rate</div><div class="ksub">'+(a.length?bk+' booked / '+a.length+' analyzed':'Awaiting transcripts…')+'</div></div>'+
-    '<div class="kcard"><div class="kval">'+fmt(dur)+'</div><div class="klbl">Avg duration</div><div class="ksub">'+calls.filter(function(c){return c._transcribed;}).length+' transcribed</div></div>'+
-    '<div class="kcard"><div class="kval" style="color:'+(ag?sc(ag):'var(--muted)')+'">'+
-      (ag!=null?ag:'--')+'</div><div class="klbl">Avg agent score</div><div class="ksub">'+(ld!=null?'Lead avg: '+ld:'Awaiting transcripts…')+'</div></div>'+
-    '<div class="kcard"><div class="kval" style="color:'+(noTx?'#BA7517':'#1D9E75')+'">'+pct(noTx,t)+'%</div><div class="klbl">No transcript</div><div class="ksub">'+noTx+' of '+t+' not categorized</div></div>';
-}
-
 function sd(k){ try{if(ch[k]){ch[k].destroy();delete ch[k];}}catch(e){} }
 // ── CAMPAIGNS & KEYWORDS ──────────────────────────────────────────────────────
 // Which Google Ads keywords/campaigns turn calls into NEW patients vs which pull
@@ -1614,58 +1742,6 @@ function renderCampaigns(){
     campTable('By campaign','Volume and conversion per Google Ads campaign', camps, 'Campaign');
 }
 
-function renderCharts(){ try{ renderSources(); rebuildDriverOptions(); renderCampaigns(); }catch(e){}
-  ['oc','pr','lo','sr','lq','ur'].forEach(sd);
-  var a=ai(), lsa=calls.filter(isLSA).length, ads=calls.length-lsa;
-  var oc={},pr={},lo={},lq={hot:0,warm:0,cold:0},ur={};
-  a.forEach(function(x){
-    if(x.outcome) oc[x.outcome]=(oc[x.outcome]||0)+1;
-    if(x.procedure&&x.procedure!=='Unknown') pr[x.procedure]=(pr[x.procedure]||0)+1;
-    if(x.lost_reason&&x.outcome!=='New Appointment Booked'){ var _lc=driverCategory(x.lost_reason)||'Other'; lo[_lc]=(lo[_lc]||0)+1; }
-    if(x.lead_quality&&lq[x.lead_quality]!==undefined) lq[x.lead_quality]++;
-    if(x.urgency) ur[x.urgency]=(ur[x.urgency]||0)+1;
-  });
-  var OC={'New Appointment Booked':'#1D9E75','Not Booked':'#E24B4A','Referred Out':'#BA7517','Confirmed Existing':'#0D2132','Missed / No Answer':'#8A96A3','Cancelled':'#9A6B8F','Rescheduled':'#185FA5'};
-  var ph='<div style="display:flex;align-items:center;justify-content:center;height:100%;color:var(--muted);font-size:11px;text-align:center">Awaiting transcripts…<br>populates as calls are transcribed</div>';
-  document.getElementById('cr1').innerHTML=
-    '<div class="ccard"><h3>Outcomes</h3><div class="csub">'+a.length+' analyzed</div><div class="cwrap">'+(a.length?'<canvas id="c-oc" role="img" aria-label="outcomes">o</canvas>':ph)+'</div></div>'+
-    '<div class="ccard"><h3>Procedure mix</h3><div class="csub">From transcript</div><div class="cwrap">'+(Object.keys(pr).length?'<canvas id="c-pr" role="img" aria-label="procedure">p</canvas>':ph)+'</div></div>'+
-    '<div class="ccard"><h3>Why we lost</h3><div class="csub">From transcript</div><div class="cwrap">'+(Object.keys(lo).length?'<canvas id="c-lo" role="img" aria-label="lost">l</canvas>':ph)+'</div></div>';
-  document.getElementById('cr2').innerHTML=
-    '<div class="ccard"><h3>Source split</h3><div class="csub">LSA vs Google Ads · all paid calls</div><div class="cwrap"><canvas id="c-sr" role="img" aria-label="source">s</canvas></div></div>'+
-    '<div class="ccard"><h3>Lead quality</h3><div class="csub">From transcript</div><div class="cwrap">'+(a.length?'<canvas id="c-lq" role="img" aria-label="lead">lq</canvas>':ph)+'</div></div>'+
-    '<div class="ccard"><h3>Urgency</h3><div class="csub">From transcript</div><div class="cwrap">'+(Object.keys(ur).length?'<canvas id="c-ur" role="img" aria-label="urgency">ur</canvas>':ph)+'</div></div>';
-
-  var TRUNC=function(v){ v=String(v); return v.length>24 ? v.slice(0,23)+'…' : v; };
-  var DO={responsive:true,maintainAspectRatio:false,cutout:'66%',layout:{padding:4},
-    plugins:{legend:{position:'bottom',labels:{font:{size:11},padding:10,boxWidth:9,boxHeight:9,usePointStyle:true,pointStyle:'rectRounded'}},
-      tooltip:{callbacks:{label:function(c){var t=c.dataset.data.reduce(function(a,b){return a+b;},0);return ' '+c.label+': '+c.parsed+' ('+(t?Math.round(c.parsed/t*100):0)+'%)';}}}}};
-  var BO={indexAxis:'y',responsive:true,maintainAspectRatio:false,layout:{padding:{right:28}},
-    plugins:{legend:{display:false}},
-    datasets:{bar:{maxBarThickness:16,categoryPercentage:.72,barPercentage:.9,borderRadius:3}},
-    scales:{x:{beginAtZero:true,ticks:{precision:0,font:{size:10}},grid:{color:'#EDF1F5'},border:{display:false}},
-            y:{ticks:{font:{size:11},color:'#2B3A48',autoSkip:false,callback:function(v){return TRUNC(this.getLabelForValue(v));}},grid:{display:false},border:{display:false}}}};
-  var TOP=6; // keep every bar chart to the same number of rows so cards line up
-  var top=function(obj){ var e=Object.entries(obj).sort(function(a,b){return b[1]-a[1];}); if(e.length>TOP){ var rest=e.slice(TOP-1).reduce(function(s,x){return s+x[1];},0); e=e.slice(0,TOP-1).concat([['Other',rest]]); } return e; };
-  var hbar=function(id,entries,colors){ var el=document.getElementById(id); if(!el) return null;
-    return new Chart(el,{type:'bar',data:{labels:entries.map(function(x){return x[0];}),datasets:[{data:entries.map(function(x){return x[1];}),backgroundColor:colors}]},options:BO,plugins:[VALUE_LABELS]}); };
-
-  var e=document.getElementById('c-oc');
-  if(e&&a.length){ var oe=Object.entries(oc).sort(function(x,y){return y[1]-x[1];});
-    ch.oc=new Chart(e,{type:'doughnut',data:{labels:oe.map(function(x){return x[0];}),datasets:[{data:oe.map(function(x){return x[1];}),backgroundColor:oe.map(function(x){return OC[x[0]]||'#8A96A3';}),borderWidth:2,borderColor:'#fff',hoverOffset:3}]},options:DO,plugins:[CENTER_TOTAL]}); }
-
-  if(Object.keys(pr).length) ch.pr=hbar('c-pr',top(pr),'#185FA5');
-  if(Object.keys(lo).length) ch.lo=hbar('c-lo',top(lo),'#C2413F');
-
-  e=document.getElementById('c-sr');
-  if(e) ch.sr=new Chart(e,{type:'doughnut',data:{labels:['LSA','Google Ads'],datasets:[{data:[lsa,ads],backgroundColor:['#1D9E75','#185FA5'],borderWidth:2,borderColor:'#fff',hoverOffset:3}]},options:DO,plugins:[CENTER_TOTAL]});
-
-  if(a.length) ch.lq=hbar('c-lq',[['Hot',lq.hot],['Warm',lq.warm],['Cold',lq.cold]],['#1D9E75','#B7791F','#8A96A3']);
-
-  if(Object.keys(ur).length){ var ord=['Emergency','High','Normal','Low'],col={Emergency:'#C2413F',High:'#B7791F',Normal:'#185FA5',Low:'#8A96A3'};
-    var lb=ord.filter(function(u){return ur[u];}); ch.ur=hbar('c-ur',lb.map(function(u){return [u,ur[u]];}),lb.map(function(u){return col[u];})); }
-}
-
 function baseFiltered(){
   if(activeF==='booked') return calls.filter(function(c){return cache[c.id]&&cache[c.id].outcome==='New Appointment Booked';});
   if(activeF==='lost')   return calls.filter(function(c){var x=cache[c.id];return x&&!x.not_analyzed&&x.outcome!=='New Appointment Booked';});
@@ -1675,7 +1751,8 @@ function baseFiltered(){
 }
 // Also filter by the selected driver — matches the call's PRIMARY driver, or any of
 // its drivers (secondary/tertiary), so you can drill into "which calls have this reason".
-function getFiltered(){
+function getFiltered(){ var _b=_getFilteredBase(); return LOG_FILTER ? _b.filter(function(c){ return LOG_FILTER.fn(nz(c)); }) : _b; }
+function _getFilteredBase(){
   var base = baseFiltered();
   if(activeDriver){
     var _catMode = activeDriver.indexOf('cat:')===0, _wantCat = _catMode ? activeDriver.slice(4) : null;
@@ -1768,7 +1845,7 @@ if(!document.getElementById('call-card-css')){
 }
 
 function renderCalls(){
-  rebuildDriverOptions();
+  rebuildDriverOptions(); renderLogFilterChip();
   var list = getFiltered();
   document.getElementById('ccount').textContent = '(' + list.length + ')';
   var el = document.getElementById('clist');
@@ -1841,7 +1918,7 @@ function buildCallCard(c) {
   if (c._transcribed) {
     txHtml = '<div class="transcript-box" id="tx-' + c.id + '">'
            +   '<div class="txlbl">Call transcript</div>'
-           +   '<div class="txtext">' + c._txt + '</div>'
+           +   '<div class="txtext">' + fmtTx(c._txt) + '</div>'
            + '</div>';
   } else {
     var refNote = c._crnote
@@ -1867,11 +1944,11 @@ function buildCallCard(c) {
   var aRow = '';
   if (xa) {
     aRow = '<div class="analysis-row">'
-         +   '<div class="an-cell"><div class="an-lbl">Procedure</div><div class="an-val" style="font-size:10px">' + (xa.procedure || '--') + '</div></div>'
+         +   '<div class="an-cell"><div class="an-lbl">Procedure</div><div class="an-val" style="font-size:10px">' + procLabel(xa) + '</div></div>'
          +   '<div class="an-cell"><div class="an-lbl">Urgency</div><div class="an-val" style="color:' + (urgC[xa.urgency] || '#888') + '">' + (xa.urgency || '--') + '</div></div>'
          +   '<div class="an-cell"><div class="an-lbl">Lead quality</div><div class="an-val" style="color:' + (LQ[xa.lead_quality] || '#888') + '">' + (xa.lead_quality ? xa.lead_quality.toUpperCase() : '--') + '</div></div>'
-         +   '<div class="an-cell"><div class="an-lbl">Sentiment</div><div class="an-val">' + (xa.sentiment || '--') + '</div></div>'
-         +   '<div class="an-cell"><div class="an-lbl">Lost reason</div><div class="an-val" style="font-size:9px;color:' + (xa.lost_reason ? '#E24B4A' : '#7A8794') + '">' + (xa.lost_reason || '--') + '</div></div>'
+         +   '<div class="an-cell"><div class="an-lbl">Patient</div><div class="an-val" style="font-size:10px">' + esc(xa.patient_type || '--') + (xa.insurance ? '<br><span style="font-weight:600;color:#5B6B78">' + esc(xa.insurance) + '</span>' : '') + '</div></div>'
+         +   '<div class="an-cell"><div class="an-lbl">Reason (main › secondary)</div><div class="an-val" style="font-size:10px;color:' + (xa.lost_reason ? '#C2413F' : '#1D9E75') + '">' + reasonLabel(xa) + '</div></div>'
          +   '<div class="an-cell"><div class="an-lbl">Outcome</div><div class="an-val" style="font-size:9px;color:' + (OC[xa.outcome] || '#888') + '">' + (xa.outcome || '--') + '</div></div>'
          + '</div>';
   }
@@ -1918,12 +1995,12 @@ function buildCallCard(c) {
   // this stays terse: one wrapping line of dimension chips + a "Did well" note.
   var fdHtml = '';
   if (xa && xa.scorecard && xa.scorecard.length) {
-    var SHORT = {etiquette:'Etiquette', discovery:'Discovery', resolution:'Resolution', objection:'Objection', closing:'Closing'};
+    var SHORT = {etiquette:'Etiquette', discovery:'Discovery', resolution:'Resolution', objection:'Objection', closing:'Closing'}; STAGES.forEach(function(st){ SHORT[st.key]=st.short; });
     var chips = xa.scorecard.map(function(d){
       var ratio = d.max ? d.score/d.max : 0;
       var col = d.na ? '#C3CCD5' : ratio>=0.8 ? '#1D9E75' : ratio>=0.5 ? '#BA7517' : '#E24B4A';
       var val = d.na ? 'n/a' : d.score+'/'+d.max;
-      return '<span style="display:inline-flex;align-items:center;gap:4px;font-size:10px;color:#5B6B78;background:#fff;border:1px solid #eceae3;border-radius:20px;padding:2px 8px">'
+      return '<span title="' + esc(d.label + (d.evidence ? ' — “' + d.evidence + '”' : '')) + '" style="display:inline-flex;align-items:center;gap:4px;font-size:10px;color:#5B6B78;background:#fff;border:1px solid #D9E0E7;border-radius:20px;padding:2px 8px">'
            +   '<span style="width:6px;height:6px;border-radius:50%;background:' + col + '"></span>'
            +   (SHORT[d.key] || d.label) + ' <strong style="color:' + col + '">' + val + '</strong></span>';
     }).join(' ');
@@ -1935,7 +2012,7 @@ function buildCallCard(c) {
       var isBk = (xa.outcome === 'New Appointment Booked' || xa.outcome === 'Rescheduled');
       var tiers = ['①','②','③'];
       var drvChips = xa.drivers.slice(0,3).map(function(d,i){
-        return '<span title="' + d.detail.replace(/"/g,'&quot;') + '" style="font-size:10px;color:#2B3A48">' + tiers[i] + '&nbsp;' + d.label + '</span>';
+        return '<span title="' + esc(d.detail||'') + '" style="font-size:10px;color:#2B3A48">' + tiers[i] + '&nbsp;' + esc(driverCategory(d.label)) + ' › <b>' + esc(d.label) + '</b></span>';
       }).join('<span style="color:#C3CCD5">&nbsp;·&nbsp;</span>');
       drvHtml = '<div style="margin-bottom:6px;display:flex;flex-wrap:wrap;gap:4px;align-items:baseline">'
               +   '<span style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:' + (isBk?'#0f6e56':'#7A8794') + ';margin-right:2px">' + (isBk?'Why booked':'Why not booked') + '</span>'
@@ -2071,41 +2148,6 @@ function aiResult(x){
   '</div>';
 }
 
-function renderOps(){
-  var a=ai();
-  var flagged=calls.filter(function(c){return cache[c.id]&&cache[c.id].flag_priority;});
-  var highF=flagged.filter(function(c){return cache[c.id].flag_priority==='high';});
-  var medF =flagged.filter(function(c){return cache[c.id].flag_priority==='medium';});
-  var lowF =flagged.filter(function(c){return cache[c.id].flag_priority==='low';});
-  document.getElementById('okstrip').innerHTML=
-    '<div class="kcard acc"><div class="kval" style="color:var(--accent)">'+flagged.length+'</div><div class="klbl">Coaching flags</div><div class="ksub">'+highF.length+' high / '+medF.length+' medium / '+lowF.length+' low</div></div>'+
-    '<div class="kcard"><div class="kval" style="color:var(--red)">'+highF.length+'</div><div class="klbl">High priority</div><div class="ksub">Urgent or warm lead lost</div></div>'+
-    '<div class="kcard"><div class="kval">'+(a.length?Math.round(flagged.length/a.length*100):0)+'%</div><div class="klbl">Flag rate</div><div class="ksub">Of '+a.length+' analyzed</div></div>';
-  if(!flagged.length){document.getElementById('opslist').innerHTML=a.length?'<div class="empt">No coaching flags detected.</div>':'<div class="empt">Awaiting transcripts — coaching flags populate as calls are transcribed.</div>';return;}
-  var pcol={high:'#E24B4A',medium:'#BA7517',low:'#8A96A3'};
-  var sorted=flagged.slice().sort(function(a,b){var o={high:0,medium:1,low:2};return o[cache[a.id].flag_priority]-o[cache[b.id].flag_priority];});
-  document.getElementById('opslist').innerHTML=sorted.map(function(c){
-    var x=cache[c.id];
-    var name=c.customer_name||'Unknown';
-    var phone=c.customer_phone_number||'';
-    var dt=c.start_time?new Date(c.start_time).toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:PRACTICE_TZ}):'--';
-    var col=pcol[x.flag_priority]||'#888';
-    var asc=x.agent_score||0, acol=asc>=75?'#1D9E75':asc>=55?'#BA7517':'#E24B4A';
-    var plabel=x.flag_priority==='high'?'HIGH':x.flag_priority==='medium'?'MEDIUM':'LOW';
-    return '<div class="opsc" style="border-left:4px solid '+col+'">'+
-      '<div style="flex-shrink:0;min-width:60px;padding-top:2px"><span style="font-size:10px;font-weight:800;color:'+col+'">'+plabel+'</span></div>'+
-      '<div style="flex:1">'+
-        '<div style="font-size:13px;font-weight:700;margin-bottom:1px">'+name+'</div>'+(phone?'<div style="font-size:11px;color:#5B6B78;margin-bottom:3px">☎ '+phone+'</div>':'')+
-        '<div style="font-size:11px;font-weight:600;color:'+col+';margin-bottom:5px">'+(x.flag_type||'')+'</div>'+
-        '<div style="font-size:12px;color:var(--muted);line-height:1.6">'+(x.ops_opportunity||'')+'</div>'+
-        '<div style="font-size:11px;color:var(--muted);margin-top:6px;display:flex;gap:12px;flex-wrap:wrap">'+
-          '<span>'+dt+'</span><span>Agent: <strong style="color:'+acol+'">'+asc+'/100</strong></span>'+
-          '<span>'+(x.outcome||'')+'</span><span>'+(x.lost_reason||'')+'</span>'+
-          '<span>'+(c.source_name||'')+'</span><span>Lead: '+(x.lead_score||0)+'/100</span>'+
-        '</div></div></div>';
-  }).join('');
-}
-
 function showView(n,btn){
   document.querySelectorAll('.nav-btn').forEach(function(b){b.classList.remove('active');});
   document.querySelectorAll('.view').forEach(function(v){v.classList.remove('active');});
@@ -2163,6 +2205,287 @@ function showLoadError(e){
   document.getElementById('lbar').style.background = '#E24B4A';
   document.getElementById('lbar').style.width = '100%';
 }
+
+// ══ V6 INSIGHTS LAYER ═════════════════════════════════════════════════════════
+// Every renderer reads calls through nz(), which normalises Claude (v6) results,
+// the local fallback analyzer and voicemail rules into one shape, so buckets,
+// drill-downs and filters never disagree with each other.
+var BOOKED_OUTCOMES = ['New Appointment Booked','Rescheduled'];
+function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function nz(c){
+  var x = cache[c.id];
+  var o = {c:c, x:x, analyzed:!!(x && !x.not_analyzed)};
+  o.missed = !c.answered || (x && x.outcome==='Missed / No Answer');
+  o.outcome = o.missed ? 'Missed / No Answer' : (o.analyzed ? x.outcome : null);
+  o.booked = !!(o.analyzed && BOOKED_OUTCOMES.indexOf(x.outcome)>=0);
+  o.newBooked = !!(o.analyzed && x.outcome==='New Appointment Booked');
+  o.existingKept = !!(o.analyzed && (x.outcome==='Confirmed Existing' || x.outcome==='Rescheduled'));
+  o.proc = o.analyzed && x.procedure && x.procedure!=='Unknown' ? x.procedure : (o.missed ? 'No conversation' : 'Unclassified');
+  o.procCat = o.analyzed ? (x.procedure_category || procCategoryOf(x.procedure)) : (o.missed ? 'No Conversation' : 'Unclassified');
+  if(o.procCat==='Unclassified' && o.missed) o.procCat='No Conversation';
+  o.reasonSub = o.analyzed ? (x.reason_secondary || x.primary_driver || x.lost_reason || null) : null;
+  o.reasonMain = o.reasonSub ? driverCategory(o.reasonSub) : null;
+  if(o.missed){ o.reasonMain='Communication & Connection'; o.reasonSub = (x && x.primary_driver) || 'Missed / Voicemail'; }
+  o.patientType = o.analyzed && x.patient_type ? x.patient_type : (c.first_call===true ? 'New Patient' : c.first_call===false ? 'Existing Patient' : 'Unknown');
+  if(o.missed) o.opp = false;
+  else if(o.analyzed && typeof x.is_opportunity==='boolean') o.opp = x.is_opportunity;
+  else if(o.missed) o.opp = false;
+  else if(o.analyzed) o.opp = o.booked || (o.reasonMain!=='Not a Valid Lead' && x.outcome!=='Confirmed Existing');
+  else o.opp = false;
+  o.notBookedOpp = o.opp && !o.booked && !o.existingKept;
+  o.oppType = (o.analyzed && x.opportunity_type) || null;
+  if(!o.oppType){
+    if(o.missed) o.oppType='Callback — Missed / Voicemail';
+    else if(o.analyzed && x.outcome==='Cancelled') o.oppType='Reschedule Recovery';
+    else if(o.analyzed && x.outcome==='Referred Out') o.oppType='Referral — Warm Handoff';
+    else if(o.notBookedOpp && (o.reasonMain==='Insurance & Coverage' || o.reasonMain==='Cost & Financial')) o.oppType='Insurance / Financing Follow-up';
+    else if(o.notBookedOpp && o.reasonMain==='Caller Not Ready') o.oppType='Treatment / Consult Follow-up';
+    else if(o.notBookedOpp) o.oppType='Callback — Unbooked New Patient';
+    else if(o.analyzed && x.flag_priority) o.oppType='Coaching — Front Desk Gap';
+  }
+  o.priority = (o.analyzed && x.flag_priority) || (o.oppType ? (o.notBookedOpp && x && (x.lead_quality==='hot' || x.urgency==='Emergency') ? 'high' : o.missed ? 'medium' : 'low') : null);
+  o.score = o.analyzed && x.agent_score!=null ? x.agent_score : null;
+  return o;
+}
+function allN(){ return calls.map(nz); }
+function rate(a,b){ return b ? Math.round(a/b*100) : 0; }
+
+// ── call-log filter set from any drill-down ───────────────────────────────────
+var LOG_FILTER = null;   // {label, fn(o)}
+function setLogFilter(label, fn){
+  LOG_FILTER = {label:label, fn:fn};
+  activeF='all'; activeDriver='';
+  document.querySelectorAll('.pill').forEach(function(p){ p.classList.toggle('active', p.textContent.trim()==='All'); });
+  var b=document.querySelectorAll('.nav-btn')[1]; showView('calls', b); renderCalls(); window.scrollTo(0,0);
+}
+function clearLogFilter(){ LOG_FILTER=null; renderCalls(); }
+function renderLogFilterChip(){
+  var el=document.getElementById('logFilter'); if(!el) return;
+  el.innerHTML = LOG_FILTER ? '<span class="lf-chip">Filtered: <b>'+esc(LOG_FILTER.label)+'</b><button onclick="clearLogFilter()" aria-label="Clear filter">✕</button></span>' : '';
+  el.style.display = LOG_FILTER ? 'block' : 'none';
+}
+// registry of drill-down row filters (onclick handlers reference them by id)
+var DF = [];
+function df(label, fn){ DF.push({label:label, fn:fn}); return DF.length-1; }
+function goDF(i){ var d=DF[i]; if(d) setLogFilter(d.label, d.fn); }
+
+// ── KPI strip ────────────────────────────────────────────────────────────────
+function renderKpis(){
+  var N=allN(), t=N.length;
+  var ans=N.filter(function(o){return !o.missed;}).length;
+  var opp=N.filter(function(o){return o.opp;});
+  var bookedNew=N.filter(function(o){return o.newBooked;}).length;
+  var oppBooked=opp.filter(function(o){return o.booked;}).length;
+  var unbooked=N.filter(function(o){return o.notBookedOpp;}).length;
+  var scored=N.filter(function(o){return o.score!=null;});
+  var avg=scored.length?Math.round(scored.reduce(function(s,o){return s+o.score;},0)/scored.length):null;
+  var analyzed=N.filter(function(o){return o.analyzed;}).length;
+  var conv=rate(oppBooked,opp.length);
+  var tile=function(val,lbl,sub,col,cls,click){ return '<div class="kcard'+(cls?' '+cls:'')+'"'+(click!=null?' role="button" tabindex="0" onclick="goDF('+click+')" title="Open these calls"':'')+'><div class="kval"'+(col?' style="color:'+col+'"':'')+'>'+val+'</div><div class="klbl">'+lbl+'</div><div class="ksub">'+sub+'</div></div>'; };
+  document.getElementById('kstrip').innerHTML=
+    tile(t,'Paid calls',rate(ans,t)+'% answered · '+(t-ans)+' missed',null,'acc',null)+
+    tile(opp.length,'Opportunities',rate(opp.length,ans)+'% of live calls were bookable',null,'',df('Opportunities',function(o){return o.opp;}))+
+    tile(bookedNew,'New appointments','+'+N.filter(function(o){return o.existingKept;}).length+' existing kept / rescheduled','#1D9E75','',df('New appointments booked',function(o){return o.newBooked;}))+
+    tile(opp.length?conv+'%':'--','Conversion',oppBooked+' booked of '+opp.length+' opportunities',opp.length?sc(conv):'var(--muted)','',null)+
+    tile(unbooked,'Unbooked opportunities','+'+(t-ans)+' missed calls to call back',unbooked?'#C2413F':'#1D9E75','',df('Unbooked opportunities',function(o){return o.notBookedOpp;}))+
+    tile(avg!=null?avg:'--','Front-desk score',scored.length+' of '+analyzed+' calls scored · strict 8-stage',avg!=null?sc(avg):'var(--muted)','',null);
+}
+
+// ── generic drill table: main rows expand into secondary rows ─────────────────
+var DRILL_OPEN = {};
+function toggleDrill(id){ DRILL_OPEN[id]=!DRILL_OPEN[id]; renderCharts(); }
+function statCells(st, opts){
+  var conv = st.opp ? rate(st.booked, st.opp) : null;
+  var cells = '<td class="num">'+st.n+'</td>';
+  if(opts.cols.indexOf('opp')>=0) cells+='<td class="num">'+st.opp+'</td>';
+  if(opts.cols.indexOf('booked')>=0) cells+='<td class="num g">'+st.booked+'</td>';
+  if(opts.cols.indexOf('lost')>=0) cells+='<td class="num r">'+st.lost+'</td>';
+  if(opts.cols.indexOf('conv')>=0) cells+='<td class="conv">'+(conv==null?'<span class="mut">--</span>':'<div class="cbar"><span style="width:'+conv+'%;background:'+sc(conv)+'"></span></div><b>'+conv+'%</b>')+'</td>';
+  if(opts.cols.indexOf('share')>=0) cells+='<td class="conv"><div class="cbar"><span style="width:'+st.share+'%;background:'+(opts.shareColor||'#185FA5')+'"></span></div><b>'+st.share+'%</b></td>';
+  if(opts.cols.indexOf('top')>=0) cells+='<td class="top">'+(st.top?esc(st.top):'<span class="mut">--</span>')+'</td>';
+  return cells;
+}
+function groupStats(list, total, topFn){
+  var st={n:list.length, opp:0, booked:0, lost:0};
+  var tops={};
+  list.forEach(function(o){ if(o.opp) st.opp++; if(o.booked && o.opp) st.booked++; if(o.notBookedOpp) st.lost++; if(topFn){ var k=topFn(o); if(k) tops[k]=(tops[k]||0)+1; } });
+  st.share = rate(list.length, total||1);
+  var tk=Object.keys(tops).sort(function(a,b){return tops[b]-tops[a];}); st.top = tk.length ? tk[0]+' ('+tops[tk[0]]+')' : '';
+  return st;
+}
+// groups: [{key,label,list,children:[{label,list}], badge}]
+function drillTable(id, title, sub, groups, opts){
+  var total = groups.reduce(function(s,g){return s+g.list.length;},0);
+  var head = {opp:'Opp.',booked:'Booked',lost:'Not booked',conv:'Conversion',share:'Share',top:opts.topLabel||'Top reason'};
+  var th = '<th>'+esc(opts.firstCol||'Category')+'</th><th class="num">Calls</th>'+opts.cols.map(function(k){ return '<th class="'+(k==='conv'||k==='share'||k==='top'?'':'num')+'">'+head[k]+'</th>'; }).join('');
+  var rows = groups.filter(function(g){return g.list.length;}).sort(function(a,b){return b.list.length-a.list.length;}).map(function(g){
+    var open = !!DRILL_OPEN[id+'|'+g.label];
+    var st = groupStats(g.list, total, opts.topFn);
+    var fi = df((opts.filterPrefix||'')+g.label, g.fn);
+    var hasKids = g.children && g.children.filter(function(k){return k.list.length;}).length>0;
+    var r = '<tr class="dmain'+(open?' open':'')+'">'+
+      '<td class="dl">'+(hasKids?'<button class="dtog" onclick="toggleDrill(\''+esc(id+'|'+g.label).replace(/'/g,"\\'")+'\')" aria-expanded="'+open+'">'+(open?'▾':'▸')+'</button>':'<span class="dtog-sp"></span>')+
+        '<a href="javascript:void(0)" onclick="goDF('+fi+')">'+esc(g.label)+'</a>'+(g.badge?'<span class="dbadge">'+esc(g.badge)+'</span>':'')+'</td>'+statCells(st, opts)+'</tr>';
+    if(open && hasKids){
+      r += g.children.filter(function(k){return k.list.length;}).sort(function(a,b){return b.list.length-a.list.length;}).map(function(k){
+        var ks = groupStats(k.list, total, opts.topFn), ki = df((opts.filterPrefix||'')+g.label+' › '+k.label, k.fn);
+        return '<tr class="dsub"><td class="dl"><span class="dtog-sp"></span><a href="javascript:void(0)" onclick="goDF('+ki+')">'+esc(k.label)+'</a></td>'+statCells(ks, opts)+'</tr>';
+      }).join('');
+    }
+    return r;
+  }).join('');
+  if(!rows) rows = '<tr><td colspan="9" class="empt-row">Populates as calls are transcribed and analyzed.</td></tr>';
+  return '<div class="dcard"><div class="dhead"><div><h3>'+esc(title)+'</h3><div class="csub">'+sub+'</div></div></div>'+
+         '<div class="dscroll"><table class="dtab"><thead><tr>'+th+'</tr></thead><tbody>'+rows+'</tbody></table></div></div>';
+}
+function bucket(list, keyFn){ var m={}; list.forEach(function(o){ var k=keyFn(o); if(!k) return; (m[k]=m[k]||[]).push(o); }); return m; }
+
+// ── funnel + stage scoreboard ────────────────────────────────────────────────
+function renderFunnel(N){
+  var t=N.length, live=N.filter(function(o){return !o.missed;}).length, opp=N.filter(function(o){return o.opp;}).length, bk=N.filter(function(o){return o.opp && o.booked;}).length;
+  var steps=[['Paid calls',t,null],['Live conversations',live,df('Live conversations',function(o){return !o.missed;})],['Opportunities',opp,df('Opportunities',function(o){return o.opp;})],['Booked',bk,df('Booked opportunities',function(o){return o.opp&&o.booked;})]];
+  return '<div class="ccard"><h3>Call funnel</h3><div class="csub">Paid Google calls → booked appointments</div><div class="funnel">'+
+    steps.map(function(s,i){ var w=t?Math.max(4,Math.round(s[1]/t*100)):0, prev=i?steps[i-1][1]:null;
+      return '<div class="fstep"'+(s[2]!=null?' role="button" onclick="goDF('+s[2]+')"':'')+'><div class="flbl"><span>'+s[0]+'</span><b>'+s[1]+'</b></div>'+
+        '<div class="fbar"><span style="width:'+w+'%"></span></div>'+
+        '<div class="fsub">'+(prev!=null?rate(s[1],prev)+'% of previous step':'&nbsp;')+'</div></div>'; }).join('')+
+    '</div></div>';
+}
+function renderStages(N){
+  var scored=N.filter(function(o){return o.analyzed && o.x.scorecard && o.x.scorecard.length && o.x.engine==='claude';});
+  var rows=STAGES.map(function(st){
+    var vals=scored.map(function(o){ return (o.x.scorecard||[]).find(function(d){return d.key===st.key;}); }).filter(function(d){return d && !d.na;});
+    var pct=vals.length?Math.round(vals.reduce(function(s,d){return s+d.score/d.max;},0)/vals.length*100):null;
+    var weak=vals.filter(function(d){return d.score/d.max<0.6;}).length;
+    var fi=df(st.label+' below 60%',function(o){ var d=o.analyzed&&(o.x.scorecard||[]).find(function(z){return z.key===st.key;}); return !!(d&&!d.na&&d.score/d.max<0.6); });
+    return '<div class="srow" role="button" onclick="goDF('+fi+')" title="Show calls scoring under 60% on '+esc(st.label)+'">'+
+      '<div class="sname">'+st.label+'<span>'+st.max+' pts</span></div>'+
+      '<div class="sbar2"><span style="width:'+(pct||0)+'%;background:'+(pct==null?'#C3CCD5':sc(pct))+'"></span><i style="left:80%"></i></div>'+
+      '<div class="sval" style="color:'+(pct==null?'var(--faint)':sc(pct))+'">'+(pct==null?'--':pct+'%')+'</div>'+
+      '<div class="sweak">'+(vals.length?weak+' weak':'')+'</div></div>';
+  }).join('');
+  return '<div class="ccard"><h3>Front-desk scorecard</h3><div class="csub">Average per stage across '+scored.length+' AI-graded calls · target line 80% · click a stage for weak calls</div><div class="stages">'+rows+'</div></div>';
+}
+
+// ── heatmap: when calls arrive and get missed ────────────────────────────────
+function renderHeat(N){
+  var days=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'], H0=7, H1=20, grid={}, mx=0;
+  var fmtP=new Intl.DateTimeFormat('en-US',{timeZone:PRACTICE_TZ,weekday:'short',hour:'numeric',hour12:false});
+  N.forEach(function(o){ if(!o.c.start_time) return; var p=fmtP.formatToParts(new Date(o.c.start_time)), wd='', hr=0;
+    p.forEach(function(q){ if(q.type==='weekday') wd=q.value; if(q.type==='hour') hr=parseInt(q.value,10)%24; });
+    hr=Math.max(H0,Math.min(H1,hr)); var k=wd+'|'+hr; var g=grid[k]=grid[k]||{n:0,m:0}; g.n++; if(o.missed) g.m++; if(g.n>mx) mx=g.n; });
+  var hours=[]; for(var h=H0;h<=H1;h++) hours.push(h);
+  var lab=function(h){ return h===12?'12p':h>12?(h-12)+'p':h+'a'; };
+  var html='<div class="heat" style="grid-template-columns:38px repeat('+hours.length+',minmax(0,1fr))"><div></div>'+hours.map(function(h){return '<div class="hh">'+lab(h)+'</div>';}).join('');
+  days.forEach(function(d){ html+='<div class="hd">'+d+'</div>'; hours.forEach(function(h){ var g=grid[d+'|'+h];
+    if(!g){ html+='<div class="hc"></div>'; return; }
+    var a=mx?0.12+0.78*g.n/mx:0; html+='<div class="hc" style="background:rgba(24,95,165,'+a.toFixed(2)+');color:'+(a>0.5?'#fff':'#0D2132')+'" title="'+d+' '+lab(h)+': '+g.n+' calls, '+g.m+' missed">'+g.n+(g.m?'<i></i>':'')+'</div>'; }); });
+  html+='</div>';
+  return '<div class="ccard wide"><h3>When calls come in</h3><div class="csub">Calls per weekday and hour (practice time) · red dot = at least one missed call in that slot · first/last column include earlier/later calls</div>'+html+'</div>';
+}
+
+// ── overview ────────────────────────────────────────────────────────────────
+function renderCharts(){ try{ renderSources(); rebuildDriverOptions(); renderCampaigns(); }catch(e){ console.error(e); }
+  ["oc","sr","pt"].forEach(sd); renderKpis();
+  var N=allN(), A=N.filter(function(o){return o.analyzed||o.missed;});
+  document.getElementById('ovTop').innerHTML = renderFunnel(N) + renderStages(N);
+
+  // procedures: category → specific procedure
+  var pc=bucket(A.filter(function(o){return o.analyzed && !o.missed;}),function(o){return o.procCat;});
+  var procGroups=Object.keys(pc).map(function(cat){ var byP=bucket(pc[cat],function(o){return o.proc;});
+    return {label:cat, list:pc[cat], fn:function(o){return o.procCat===cat;},
+      children:Object.keys(byP).map(function(p){ return {label:p, list:byP[p], fn:function(o){return o.procCat===cat && o.proc===p;}}; })}; });
+  var procHtml = drillTable('proc','Procedures — booked vs not booked','By dental procedure category; expand a row for specific procedures. Conversion = booked ÷ opportunities.',procGroups,
+    {firstCol:'Procedure',cols:['opp','booked','lost','conv','top'],topLabel:'Top not-booked reason',topFn:function(o){return o.notBookedOpp?o.reasonSub:null;}});
+
+  // why we lost: not-booked (opportunity + non-opportunity) main → secondary
+  var lostList=A.filter(function(o){ return !o.booked && !o.existingKept && o.reasonMain; });
+  var lm=bucket(lostList,function(o){return o.reasonMain;});
+  var lostGroups=Object.keys(lm).map(function(cat){ var bs=bucket(lm[cat],function(o){return o.reasonSub;});
+    return {label:cat, list:lm[cat], badge:CONTROLLABLE_CATS.indexOf(cat)>=0?'Controllable':(cat==='Not a Valid Lead'?'Not an opportunity':''), fn:function(o){return !o.booked&&!o.existingKept&&o.reasonMain===cat;},
+      children:Object.keys(bs).map(function(sub){ return {label:sub, list:bs[sub], fn:function(o){return !o.booked&&!o.existingKept&&o.reasonSub===sub;}}; })}; });
+  var lostHtml = drillTable('lost','Why we lost','Not-booked calls by main reason → secondary reason. '+lostList.length+' calls.',lostGroups,
+    {firstCol:'Reason',cols:['share','top'],shareColor:'#C2413F',topLabel:'Top procedure',topFn:function(o){return o.proc;},filterPrefix:'Lost: '});
+
+  var bkList=A.filter(function(o){ return (o.booked||o.existingKept) && o.reasonMain; });
+  var bm=bucket(bkList,function(o){return o.reasonMain;});
+  var bkGroups=Object.keys(bm).map(function(cat){ var bs=bucket(bm[cat],function(o){return o.reasonSub;});
+    return {label:cat, list:bm[cat], fn:function(o){return (o.booked||o.existingKept)&&o.reasonMain===cat;},
+      children:Object.keys(bs).map(function(sub){ return {label:sub, list:bs[sub], fn:function(o){return (o.booked||o.existingKept)&&o.reasonSub===sub;}}; })}; });
+  var bkHtml = drillTable('won','Why we booked','Booked, rescheduled and confirmed calls by main reason → secondary reason. '+bkList.length+' calls.',bkGroups,
+    {firstCol:'Reason',cols:['share','top'],shareColor:'#1D9E75',topLabel:'Top procedure',topFn:function(o){return o.proc;},filterPrefix:'Booked: '});
+
+  // patient type & source: booked vs not booked
+  var ptG=['New Patient','Existing Patient','Unknown','Not a Patient'].map(function(k){ return {label:k, list:A.filter(function(o){return o.patientType===k;}), fn:function(o){return o.patientType===k;}}; });
+  var ptHtml = drillTable('pt','Patient type','New vs existing callers — booked vs not booked.',ptG,{firstCol:'Patient type',cols:['opp','booked','lost','conv']});
+  var chG=[['lsa','Local Services Ads'],['assets','Google Ads — Assets'],['pool','Google Ads — Search Pool'],['other','Google Ads — Other']].map(function(d){ return {label:d[1], list:A.filter(function(o){return adChannel(o.c)===d[0];}), fn:function(o){return adChannel(o.c)===d[0];}}; });
+  var chHtml = drillTable('ch','Channel','Booked vs not booked by the ad number that rang.',chG,{firstCol:'Channel',cols:['opp','booked','lost','conv']});
+
+  document.getElementById('ovDrill').innerHTML =
+    '<div class="drow full">'+procHtml+'</div>'+
+    '<div class="drow two">'+lostHtml+bkHtml+'</div>'+
+    '<div class="drow two">'+ptHtml+chHtml+'</div>';
+
+  // outcomes doughnut + heatmap
+  var oc={}; A.forEach(function(o){ var k=o.outcome; if(k) oc[k]=(oc[k]||0)+1; });
+  var OC={'New Appointment Booked':'#1D9E75','Rescheduled':'#5FB89A','Confirmed Existing':'#185FA5','Not Booked':'#C2413F','Referred Out':'#B7791F','Cancelled':'#9A6B8F','Missed / No Answer':'#8A96A3'};
+  document.getElementById('ovBottom').innerHTML =
+    '<div class="ccard"><h3>Outcomes</h3><div class="csub">'+A.length+' calls with a result</div><div class="cwrap">'+(A.length?'<canvas id="c-oc" role="img" aria-label="Outcomes"></canvas>':'<div class="empt">Awaiting results…</div>')+'</div></div>'+
+    renderHeat(N);
+  var DO={responsive:true,maintainAspectRatio:false,cutout:'66%',layout:{padding:4},
+    onClick:function(ev,els,chart){ if(!els.length) return; var lbl=chart.data.labels[els[0].index]; setLogFilter('Outcome: '+lbl,function(o){return o.outcome===lbl;}); },
+    plugins:{legend:{position:'bottom',labels:{font:{size:11},padding:10,boxWidth:9,boxHeight:9,usePointStyle:true,pointStyle:'rectRounded'}},
+      tooltip:{callbacks:{label:function(c){var t=c.dataset.data.reduce(function(a,b){return a+b;},0);return ' '+c.label+': '+c.parsed+' ('+(t?Math.round(c.parsed/t*100):0)+'%)';}}}}};
+  var e=document.getElementById('c-oc');
+  if(e){ var oe=Object.entries(oc).sort(function(x,y){return y[1]-x[1];});
+    ch.oc=new Chart(e,{type:'doughnut',data:{labels:oe.map(function(x){return x[0];}),datasets:[{data:oe.map(function(x){return x[1];}),backgroundColor:oe.map(function(x){return OC[x[0]]||'#8A96A3';}),borderWidth:2,borderColor:'#fff',hoverOffset:3}]},options:DO,plugins:[CENTER_TOTAL]}); }
+}
+
+// ── opportunities: bucketed follow-up queue with type / priority filters ─────
+var OPP_F = {type:'', pri:'', pt:''};
+function setOppF(k,v){ OPP_F[k]=v; renderOps(); }
+function renderOps(){
+  var N=allN().filter(function(o){ return o.oppType; });
+  var PRI={high:0,medium:1,low:2};
+  var byType=bucket(N,function(o){return o.oppType;});
+  var hi=N.filter(function(o){return o.priority==='high';}).length;
+  var callbacks=N.filter(function(o){return /^Callback/.test(o.oppType);}).length;
+  var coach=N.filter(function(o){return o.oppType==='Coaching — Front Desk Gap' || (o.x&&o.x.ops_opportunity);}).length;
+  document.getElementById('okstrip').innerHTML=
+    '<div class="kcard acc"><div class="kval">'+N.length+'</div><div class="klbl">Open opportunities</div><div class="ksub">Across '+Object.keys(byType).length+' buckets</div></div>'+
+    '<div class="kcard"><div class="kval" style="color:#C2413F">'+hi+'</div><div class="klbl">High priority</div><div class="ksub">Hot or emergency caller not booked</div></div>'+
+    '<div class="kcard"><div class="kval">'+callbacks+'</div><div class="klbl">Callbacks due</div><div class="ksub">Unbooked + missed callers</div></div>';
+  var types=OPP_TYPES.filter(function(t){return byType[t];});
+  var chips='<button class="ochip'+(!OPP_F.type?' on':'')+'" onclick="setOppF(\'type\',\'\')">All <b>'+N.length+'</b></button>'+types.map(function(t){
+    return '<button class="ochip'+(OPP_F.type===t?' on':'')+'" onclick="setOppF(\'type\',\''+t.replace(/'/g,"\\'")+'\')">'+esc(t)+' <b>'+byType[t].length+'</b></button>'; }).join('');
+  var sel=function(k,opts,lbl){ return '<label class="osel">'+lbl+'<select onchange="setOppF(\''+k+'\',this.value)">'+opts.map(function(o){ return '<option value="'+esc(o[0])+'"'+(OPP_F[k]===o[0]?' selected':'')+'>'+esc(o[1])+'</option>'; }).join('')+'</select></label>'; };
+  var bar='<div class="obar"><div class="ochips">'+chips+'</div><div class="osels">'+
+    sel('pri',[['','All priorities'],['high','High'],['medium','Medium'],['low','Low']],'Priority')+
+    sel('pt',[['','All callers'],['New Patient','New patients'],['Existing Patient','Existing patients'],['Unknown','Unknown']],'Caller')+'</div></div>';
+  var list=N.filter(function(o){ return (!OPP_F.type||o.oppType===OPP_F.type)&&(!OPP_F.pri||o.priority===OPP_F.pri)&&(!OPP_F.pt||o.patientType===OPP_F.pt); })
+    .sort(function(a,b){ var p=(PRI[a.priority]==null?3:PRI[a.priority])-(PRI[b.priority]==null?3:PRI[b.priority]); if(p) return p; var t=OPP_TYPES.indexOf(a.oppType)-OPP_TYPES.indexOf(b.oppType); return t || String(b.c.start_time).localeCompare(String(a.c.start_time)); });
+  var pcol={high:'#C2413F',medium:'#B7791F',low:'#8A96A3'};
+  var cards=list.map(function(o){ var c=o.c, x=o.x||{};
+    var dt=c.start_time?new Date(c.start_time).toLocaleString('en-US',{weekday:'short',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZone:PRACTICE_TZ}):'--';
+    var ph=c.customer_phone_number||'', col=pcol[o.priority]||'#8A96A3';
+    var fi=df('Call: '+(c.customer_name||ph),function(z){return z.c.id===c.id;});
+    var action=x.next_action||x.ops_opportunity||(o.missed?'Call back — caller did not reach a live agent.':'');
+    return '<div class="ocard" style="border-left-color:'+col+'">'+
+      '<div class="ohead"><span class="opri" style="color:'+col+'">'+(o.priority||'').toUpperCase()+'</span><span class="otype">'+esc(o.oppType)+'</span><span class="odt">'+dt+'</span></div>'+
+      '<div class="obody"><div class="owho"><b>'+esc(c.customer_name||'Unknown caller')+'</b>'+(ph?'<a href="tel:'+esc(ph)+'">'+fmtPhone(ph)+'</a>':'')+'<span>'+esc(o.patientType)+' · '+esc(o.proc)+'</span></div>'+
+      '<div class="owhy"><div class="olbl">Reason</div><div>'+(o.reasonMain?esc(o.reasonMain)+' <span class="mut">›</span> '+esc(o.reasonSub):'<span class="mut">--</span>')+'</div>'+
+        (x.summary?'<div class="osum">'+esc(x.summary)+'</div>':'')+'</div>'+
+      '<div class="oact"><div class="olbl">Next action</div><div>'+(action?esc(action):'<span class="mut">Review call</span>')+'</div></div>'+
+      '<div class="ometa">'+(o.score!=null?'<span>Front desk <b style="color:'+sc(o.score)+'">'+o.score+'</b></span>':'')+(x.lead_score!=null?'<span>Lead '+x.lead_score+'</span>':'')+'<a href="javascript:void(0)" onclick="goDF('+fi+')">View call →</a></div></div></div>';
+  }).join('');
+  document.getElementById('opslist').innerHTML = bar + (cards || '<div class="empt">'+(calls.length?'No opportunities match these filters.':'Awaiting calls…')+'</div>');
+}
+
+// transcript display: speaker turns on their own lines
+function fmtTx(t){ return esc(t||'').replace(/\n/g,'<br>').replace(/(Speaker [A-Z]:)/g,'<b class="spk">$1</b>'); }
+function procLabel(xa){ var cat=xa.procedure_category||procCategoryOf(xa.procedure); return (xa.procedure&&xa.procedure!=='Unknown')?esc(cat)+'<br><span style="font-weight:600;color:#5B6B78">'+esc(xa.procedure)+'</span>':'--'; }
+function reasonLabel(xa){ var sub=xa.reason_secondary||xa.primary_driver||xa.lost_reason; if(!sub) return '--'; return esc(driverCategory(sub))+'<br><span style="font-weight:600;color:#5B6B78">'+esc(sub)+'</span>'; }
+
 
 // ── AUTO-LAUNCH ───────────────────────────────────────────────────────────────
 window.addEventListener('DOMContentLoaded', async function(){
