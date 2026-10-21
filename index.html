@@ -313,6 +313,53 @@ html body .src-n{font-weight:700;color:var(--navy)}
 .spk{color:var(--navy)}
 @media(max-width:1100px){.crow.two,.crow.split,.drow.two{grid-template-columns:minmax(0,1fr)}.obody{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.obody{grid-template-columns:1fr}.ometa{align-items:flex-start}.srow{grid-template-columns:minmax(0,1fr) 70px 40px}.sweak{display:none}}
+
+/* v6b call log */
+.calls-hdr{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:10px 16px}
+.calls-hdr .fp{justify-content:flex-end}
+.ltools{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap}
+.lsearch{flex:1 1 260px;height:32px;border:1px solid var(--border);border-radius:6px;padding:0 10px;font:inherit;font-size:12.5px;color:var(--navy)}
+.lsel{height:32px;border:1px solid var(--border);border-radius:6px;padding:0 8px;font:inherit;font-size:12px;background:#fff;color:var(--navy);max-width:320px}
+.lsum{display:flex;flex-wrap:wrap;gap:6px 20px;padding:.6rem 1rem;border-bottom:1px solid var(--line-soft);font-size:12px;color:#5B6B78;background:#FBFCFD}
+.lsum b{color:var(--navy)}.lsum .mut{margin-left:auto;font-size:11px}
+#clist{padding:0 !important;background:#fff}
+.lhead,.lrow{display:grid;grid-template-columns:72px minmax(150px,1.3fr) 100px minmax(140px,1.3fr) 104px minmax(160px,1.5fr) 52px 22px;gap:12px;align-items:center;padding:0 1rem}
+.lhead{font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:var(--faint);font-weight:700;height:34px;border-bottom:1px solid var(--border);background:#F8FAFC;position:sticky;top:0;z-index:2}
+.lcall{border-bottom:1px solid var(--line-soft)}
+.lrow{min-height:54px;cursor:pointer}.lrow:hover{background:#F8FAFC}.lrow.open{background:#F3F7FB}
+.lrow .c1{font-size:12.5px;color:var(--navy);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lrow .c2{font-size:11px;color:var(--faint);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+.lrow>div{min-width:0}.lc-sc{text-align:right;font-size:14px}.lc-x{color:var(--faint);font-size:11px;text-align:center}
+.opill{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:12px;white-space:nowrap}
+.ldet{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:18px;padding:1rem 1rem 1.2rem 1rem;background:#F8FAFC;border-top:1px solid var(--line-soft)}
+.dsum{font-size:13px;color:var(--navy);font-weight:600;margin-bottom:10px;line-height:1.5}
+.dsec{background:#fff;border:1px solid var(--border);border-radius:8px;padding:.7rem .85rem;margin-bottom:10px}
+.dsec.act{border-left:3px solid var(--accent)}
+.dsh{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#5B6B78;margin-bottom:6px}.dsh b{font-size:12px;margin-left:6px}
+.drs{font-size:12.5px;color:var(--navy)}.dm{font-weight:700}.dtx{font-size:12px;color:#2B3A48;line-height:1.55;margin-top:4px}
+.pri{font-size:9.5px;padding:1px 7px;border-radius:10px;margin-left:6px;letter-spacing:.04em}.pri.high{background:#FBEAEA;color:#B3261E}.pri.medium{background:#FBF3E4;color:#8A5A12}.pri.low{background:#EDF1F5;color:#5B6B78}
+.stg{display:grid;grid-template-columns:150px minmax(60px,110px) 44px minmax(0,1fr);gap:10px;align-items:center;padding:4px 0;border-top:1px solid var(--line-soft)}.stg:first-of-type{border-top:0}
+.stn{font-size:12px;font-weight:600;color:#2B3A48}.stb{height:7px;background:#EDF1F5;border-radius:4px;overflow:hidden}.stb span{display:block;height:100%}
+.stv{font-size:12px;font-weight:700;text-align:right;color:var(--navy)}.ste{font-size:11.5px;color:#5B6B78;font-style:italic;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.stg.na .stn,.stg.na .stv{color:var(--faint)}
+.dwell{font-size:11.5px;color:#12805c;margin-top:6px}
+.dmeta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 14px;background:#fff;border:1px solid var(--border);border-radius:8px;padding:.7rem .85rem;margin-bottom:10px}
+.dmeta div{font-size:12px;color:var(--navy);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.dmeta span{display:block;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--faint)}
+.txb{background:#fff;border:1px solid var(--border);border-radius:8px;padding:.75rem .9rem;font-size:12.5px;line-height:1.65;color:#2B3A48;max-height:340px;overflow-y:auto}
+.crn{margin-top:8px;padding-top:8px;border-top:1px dashed var(--border);font-style:normal;color:#5B6B78}
+.dcall{display:inline-block;margin-top:10px;font-size:12px;font-weight:700;color:#fff;background:var(--accent);border-radius:6px;padding:6px 12px;text-decoration:none}
+/* v6b campaigns */
+.camp-note2{font-size:12.5px;color:#2B3A48;background:#fff;border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--radius);box-shadow:var(--shadow);padding:.85rem 1rem;margin-bottom:12px;line-height:1.6}
+.drow.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.sdot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;vertical-align:middle}
+.srows{margin-top:.5rem}.srw{display:flex;justify-content:space-between;gap:12px;font-size:12.5px;padding:.42rem 0;border-bottom:1px solid var(--line-soft)}.srw:last-child{border-bottom:0}
+.srw a{color:var(--navy);text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.srw a:hover{text-decoration:underline}.srw span{white-space:nowrap;color:#5B6B78}
+.srw b.g{color:#12805c}.srw b.r{color:#B3261E}.empt.small{padding:1rem;font-size:12px}
+.ctab td.mutc{color:#7A8794}.mtag{font-size:9.5px;font-weight:700;color:#5B6B78;background:#EDF1F5;border-radius:10px;padding:1px 7px;margin-left:8px;text-transform:uppercase;letter-spacing:.04em}
+@media(max-width:1100px){.drow.three{grid-template-columns:minmax(0,1fr)}.ldet{grid-template-columns:minmax(0,1fr)}
+  .lhead{display:none}.lrow{grid-template-columns:64px minmax(0,1fr) 96px 44px 18px;padding:.5rem 1rem}.lc-ch,.lc-proc,.lc-rsn{display:none}}
+@media(max-width:640px){.calls-hdr{grid-template-columns:1fr}.calls-hdr .fp{justify-content:flex-start}.lrow{grid-template-columns:54px minmax(0,1fr) 84px 36px}.lc-x{display:none}
+  .stg{grid-template-columns:110px minmax(40px,1fr) 40px}.ste{grid-column:1/-1;white-space:normal}.dmeta{grid-template-columns:1fr 1fr}.lsum .mut{margin-left:0}}
 @media print{.kcard,.ccard,.call-card,html body .src-wrap{box-shadow:none !important}#kstrip{grid-template-columns:repeat(6,1fr) !important}.cwrap{height:180px !important}}
 </style>
 </head>
@@ -364,14 +411,24 @@ html body .src-n{font-weight:700;color:var(--navy)}
       <div class="calls-hdr">
         <h3>Call log <span id="ccount" style="font-weight:400;color:var(--muted)"></span></h3>
         <div class="fp">
-          <span class="pill active" onclick="setF(&#39;all&#39;,this)">All</span>
-          <span class="pill" onclick="setF(&#39;booked&#39;,this)">Booked</span>
-          <span class="pill" onclick="setF(&#39;lost&#39;,this)">Not Booked</span>
-          <span class="pill" onclick="setF(&#39;lsa&#39;,this)">LSA</span>
-          <span class="pill" onclick="setF(&#39;ads&#39;,this)">Ads</span>
-          <select id="drvSel" onchange="setDriver(this.value)" title="Filter the call log by driver / reason" style="margin-left:8px;font-size:11px;padding:3px 8px;border:1px solid #D9E0E7;border-radius:20px;background:#fff;color:#0D2132;cursor:pointer;max-width:300px"><option value="">All drivers</option></select>
+          <span class="pill active" onclick="setF('all',this)">All</span>
+          <span class="pill" onclick="setF('opp',this)">Opportunities</span>
+          <span class="pill" onclick="setF('booked',this)">Booked</span>
+          <span class="pill" onclick="setF('lost',this)">Not booked</span>
+          <span class="pill" onclick="setF('missed',this)">Missed</span>
+          <span class="pill" onclick="setF('nonlead',this)">Non-patient</span>
+          <span class="pill" onclick="setF('lsa',this)">LSA</span>
+          <span class="pill" onclick="setF('ads',this)">Ads</span>
+        </div>
+        <div class="ltools">
+          <input id="lsearch" class="lsearch" type="search" placeholder="Search name, phone, procedure, transcript…" oninput="setSearch(this.value)">
+          <select id="drvSel" class="lsel" onchange="setDriver(this.value)" title="Filter by reason"><option value="">All reasons</option></select>
+          <select class="lsel" onchange="setSort(this.value)" title="Sort">
+            <option value="new">Newest first</option><option value="old">Oldest first</option><option value="low">Lowest front-desk score</option><option value="lead">Strongest lead</option><option value="long">Longest call</option>
+          </select>
         </div>
       </div>
+      <div id="lsum" class="lsum"></div>
       <div id="logFilter" class="lf" style="display:none"></div>
       <div id="clist"></div>
     </div>
@@ -2485,6 +2542,195 @@ function renderOps(){
 function fmtTx(t){ return esc(t||'').replace(/\n/g,'<br>').replace(/(Speaker [A-Z]:)/g,'<b class="spk">$1</b>'); }
 function procLabel(xa){ var cat=xa.procedure_category||procCategoryOf(xa.procedure); return (xa.procedure&&xa.procedure!=='Unknown')?esc(cat)+'<br><span style="font-weight:600;color:#5B6B78">'+esc(xa.procedure)+'</span>':'--'; }
 function reasonLabel(xa){ var sub=xa.reason_secondary||xa.primary_driver||xa.lost_reason; if(!sub) return '--'; return esc(driverCategory(sub))+'<br><span style="font-weight:600;color:#5B6B78">'+esc(sub)+'</span>'; }
+
+
+// ══ V6b — CALL LOG + CAMPAIGNS & KEYWORDS (same logic as the Overview) ═══════
+// Call log: one scannable row per call; click to expand the full review.
+var CL = {search:'', sort:'new', open:{}};
+function baseFiltered(){
+  var N = calls.map(nz), f = activeF;
+  var keep = N.filter(function(o){
+    if(f==='booked') return o.booked || o.existingKept;
+    if(f==='lost')   return o.notBookedOpp;
+    if(f==='opp')    return o.opp;
+    if(f==='missed') return o.missed;
+    if(f==='nonlead')return o.analyzed && !o.opp && !o.missed;
+    if(f==='lsa')    return isLSA(o.c);
+    if(f==='ads')    return !isLSA(o.c);
+    return true;
+  });
+  return keep.map(function(o){ return o.c; });
+}
+function setF(f,el){ activeF=f; document.querySelectorAll('#view-calls .pill').forEach(function(p){p.classList.remove('active');}); if(el) el.classList.add('active'); renderCalls(); }
+function setSearch(v){ CL.search=(v||'').toLowerCase().trim(); renderCalls(); }
+function setSort(v){ CL.sort=v; renderCalls(); }
+function toggleRow(id){ CL.open[id]=!CL.open[id]; var c=calls.find(function(z){return z.id===id;}); if(c) refreshCard(c); }
+function refreshCard(c){ var el=document.getElementById('r-'+c.id); if(el) el.outerHTML = buildRow(c); }
+
+var OUT_STYLE = {'New Appointment Booked':['Booked','#12805c','#E3F4EC'],'Rescheduled':['Rescheduled','#12805c','#E3F4EC'],'Confirmed Existing':['Confirmed','#185FA5','#E6F1FB'],
+  'Not Booked':['Not booked','#B3261E','#FBEAEA'],'Referred Out':['Referred out','#8A5A12','#FBF3E4'],'Cancelled':['Cancelled','#7A4E73','#F4ECF3'],'Missed / No Answer':['Missed','#5B6B78','#EDF1F5']};
+function outPill(o){
+  if(!o.outcome) return '<span class="opill" style="color:#7A8794;background:#F3F6F9">'+(o.c._transcribeFailed?'Not analyzed':(o.c.answered&&o.c.recording?'Analyzing…':'No recording'))+'</span>';
+  var s=OUT_STYLE[o.outcome]||[o.outcome,'#5B6B78','#EDF1F5'];
+  return '<span class="opill" style="color:'+s[1]+';background:'+s[2]+'">'+s[0]+'</span>';
+}
+function scoreCell(o){
+  if(o.score==null) return '<span class="mut">—</span>';
+  if(o.analyzed && !o.opp) return '<span class="mut" title="Not a patient opportunity — scored on opening, greeting and resolution only">'+o.score+'*</span>';
+  return '<b style="color:'+sc(o.score)+'">'+o.score+'</b>';
+}
+function buildRow(c){
+  var o=nz(c), x=o.x||{}, open=!!CL.open[c.id];
+  var dt=c.start_time?new Date(c.start_time):null;
+  var d1=dt?dt.toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:PRACTICE_TZ}):'--';
+  var d2=dt?dt.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:PRACTICE_TZ}):'';
+  var chn={lsa:'LSA',assets:'Ads · Assets',pool:'Ads · Search',other:'Ads · Other'}[adChannel(c)]||'Ads';
+  var proc=o.analyzed&&x.procedure&&x.procedure!=='Unknown'?'<div class="c1">'+esc(x.procedure)+'</div><div class="c2">'+esc(o.procCat)+'</div>':'<span class="mut">—</span>';
+  var reason=o.reasonSub?'<div class="c1">'+esc(o.reasonSub)+'</div><div class="c2">'+esc(o.reasonMain)+'</div>':'<span class="mut">—</span>';
+  var row='<div class="lrow'+(open?' open':'')+'" onclick="toggleRow(\''+c.id+'\')" role="button" aria-expanded="'+open+'">'+
+    '<div class="lc-dt"><div class="c1">'+d1+'</div><div class="c2">'+d2+'</div></div>'+
+    '<div class="lc-who"><div class="c1">'+esc(c.customer_name||'Unknown caller')+'</div><div class="c2">'+fmtPhone(c.customer_phone_number)+' · '+esc(o.patientType)+'</div></div>'+
+    '<div class="lc-ch"><div class="c1">'+chn+'</div><div class="c2">'+fmt(c.duration||0)+'</div></div>'+
+    '<div class="lc-proc">'+proc+'</div>'+
+    '<div class="lc-out">'+outPill(o)+'</div>'+
+    '<div class="lc-rsn">'+reason+'</div>'+
+    '<div class="lc-sc">'+scoreCell(o)+'</div>'+
+    '<div class="lc-x">'+(open?'▾':'▸')+'</div></div>';
+  return '<div class="lcall" id="r-'+c.id+'">'+row+(open?buildDetail(c,o):'')+'</div>';
+}
+function buildDetail(c,o){
+  var x=o.x||{};
+  var meta=[['Urgency',x.urgency],['Lead',x.lead_quality?(x.lead_quality.toUpperCase()+(x.lead_score!=null?' · '+x.lead_score:'')):null],['Insurance',x.insurance],['Pain mentioned',x.pain===true?'Yes':x.pain===false?'No':null],['Language',x.language],['Sentiment',x.sentiment],['Source',c.source_name],['Keyword',c.keywords],['Campaign',c.campaign]]
+    .filter(function(m){return m[1];}).map(function(m){ return '<div><span>'+m[0]+'</span>'+esc(m[1])+'</div>'; }).join('');
+  var stages='';
+  if(o.analyzed && x.scorecard && x.scorecard.length){
+    stages='<div class="dsec"><div class="dsh">Front-desk scorecard <b style="color:'+(o.score!=null?sc(o.score):'#7A8794')+'">'+(o.score!=null?o.score+'/100':'—')+'</b>'+(o.opp?'':'<span class="mut"> · not a patient opportunity</span>')+'</div>'+
+      x.scorecard.map(function(d){ var p=d.max?Math.round(d.score/d.max*100):0;
+        return '<div class="stg'+(d.na?' na':'')+'"><div class="stn">'+esc(d.label)+'</div>'+
+          '<div class="stb"><span style="width:'+(d.na?0:p)+'%;background:'+sc(p)+'"></span></div>'+
+          '<div class="stv">'+(d.na?'n/a':d.score+'/'+d.max)+'</div>'+
+          '<div class="ste">'+(d.na?'<span class="mut">Not applicable to this call</span>':(d.evidence&&d.evidence!=='not observed'?'“'+esc(d.evidence)+'”':'<span class="mut">Not observed</span>'))+'</div></div>'; }).join('')+
+      ((x.strengths&&x.strengths.length)?'<div class="dwell">Did well: '+esc(x.strengths.join(' · '))+'</div>':'')+'</div>';
+  }
+  var why='';
+  if(o.reasonSub){
+    var good=o.booked||o.existingKept;
+    why='<div class="dsec"><div class="dsh">'+(good?'Why it booked':'Why it did not book')+'</div>'+
+      '<div class="drs"><span class="dm" style="color:'+(good?'#12805c':'#B3261E')+'">'+esc(o.reasonMain)+'</span> › <b>'+esc(o.reasonSub)+'</b>'+(x.reason_contributing?'<span class="mut"> · also: '+esc(x.reason_contributing)+'</span>':'')+'</div>'+
+      ((good?x.booked_driver:x.lost_driver)?'<div class="dtx">'+esc(good?x.booked_driver:x.lost_driver)+'</div>':'')+'</div>';
+  }
+  var act='';
+  if(o.oppType || x.ops_opportunity || x.next_action){
+    act='<div class="dsec act"><div class="dsh">'+(o.oppType?esc(o.oppType):'Follow-up')+(o.priority?' <span class="pri '+o.priority+'">'+o.priority+'</span>':'')+'</div>'+
+      (x.next_action?'<div class="dtx"><b>Next action:</b> '+esc(x.next_action)+'</div>':'')+
+      (x.ops_opportunity?'<div class="dtx"><b>Coaching:</b> '+esc(x.ops_opportunity)+'</div>':'')+
+      (o.missed&&!x.next_action?'<div class="dtx">Call back — the caller did not reach a live agent.</div>':'')+'</div>';
+  }
+  var tx;
+  if(c._transcribed) tx='<div class="txb">'+fmtTx(c._txt)+'</div>';
+  else tx='<div class="txb mut">'+(!c.answered?'Missed call — nothing to transcribe.':!c.recording?'No recording on this call, so it could not be transcribed.':c._transcribeFailed?'AssemblyAI could not transcribe this recording — review it in CallRail.':'Transcribing…')+
+    (c._crnote?'<div class="crn"><b>CallRail note (reference only, not used for scoring):</b> '+esc(c._crnote)+'</div>':'')+'</div>';
+  return '<div class="ldet">'+
+    '<div class="dl">'+(x.summary?'<div class="dsum">'+esc(x.summary)+'</div>':'')+why+act+stages+'</div>'+
+    '<div class="dr"><div class="dmeta">'+meta+'</div><div class="dsh">Transcript</div>'+tx+
+      (c.customer_phone_number?'<a class="dcall" href="tel:'+esc(c.customer_phone_number)+'" onclick="event.stopPropagation()">Call '+fmtPhone(c.customer_phone_number)+'</a>':'')+'</div></div>';
+}
+function renderCalls(){
+  rebuildDriverOptions(); renderLogFilterChip();
+  var list=getFiltered();
+  if(CL.search){ list=list.filter(function(c){ var x=cache[c.id]||{}; return [c.customer_name,c.customer_phone_number,c.keywords,c.campaign,x.procedure,x.reason_secondary,x.summary,c._txt].join(' ').toLowerCase().indexOf(CL.search)>=0; }); }
+  var N=list.map(nz);
+  var by={new:function(a,b){return String(b.c.start_time).localeCompare(String(a.c.start_time));},
+          old:function(a,b){return String(a.c.start_time).localeCompare(String(b.c.start_time));},
+          low:function(a,b){return (a.score==null||!a.opp?999:a.score)-(b.score==null||!b.opp?999:b.score);},
+          lead:function(a,b){return ((b.x&&b.x.lead_score)||0)-((a.x&&a.x.lead_score)||0);},
+          long:function(a,b){return (b.c.duration||0)-(a.c.duration||0);}}[CL.sort]||null;
+  if(by) N.sort(by);
+  var opp=N.filter(function(o){return o.opp;}), bk=opp.filter(function(o){return o.booked;}).length;
+  var sco=N.filter(function(o){return o.score!=null&&o.opp;});
+  var avg=sco.length?Math.round(sco.reduce(function(s,o){return s+o.score;},0)/sco.length):null;
+  document.getElementById('ccount').textContent='('+N.length+')';
+  var sum=document.getElementById('lsum');
+  if(sum) sum.innerHTML='<span><b>'+N.length+'</b> calls</span><span><b>'+opp.length+'</b> opportunities</span><span><b style="color:#12805c">'+bk+'</b> booked</span>'+
+    '<span>Conversion <b style="color:'+(opp.length?sc(rate(bk,opp.length)):'#7A8794')+'">'+(opp.length?rate(bk,opp.length)+'%':'—')+'</b></span>'+
+    '<span>Avg front desk <b style="color:'+(avg!=null?sc(avg):'#7A8794')+'">'+(avg!=null?avg:'—')+'</b></span>'+
+    '<span class="mut">* = not a patient opportunity, partial scorecard</span>';
+  var el=document.getElementById('clist');
+  if(!N.length){ el.innerHTML='<div class="empt">No calls match these filters.</div>'; return; }
+  el.innerHTML='<div class="lhead"><div>When</div><div>Caller</div><div>Channel</div><div>Procedure</div><div>Outcome</div><div>Reason</div><div>Score</div><div></div></div>'+N.map(function(o){return buildRow(o.c);}).join('');
+}
+
+// ── Campaigns & keywords: opportunity-based, campaign → keyword drill ─────────
+function kwNorm(k){
+  if(!k) return null; var s=String(k).trim(), mt='Broad';
+  if(/^\[.*\]$/.test(s)){ mt='Exact'; s=s.slice(1,-1); } else if(/^".*"$/.test(s)){ mt='Phrase'; s=s.slice(1,-1); }
+  s=s.replace(/^\+/,'').replace(/\s\+/g,' ').toLowerCase().trim();
+  return s ? {term:s, match:mt} : null;
+}
+function campName(c){ var v=(c.campaign||'').trim(); if(!v) return adChannel(c)==='lsa'?'Local Services Ads':'(no campaign data)'; if(/^lsa$/i.test(v)) return 'Local Services Ads'; return v; }
+function kwStats(list){
+  var st={n:list.length, opp:0, bk:0, lost:0, nonlead:0, missed:0, dur:0, sc:0, scn:0, rs:{}};
+  list.forEach(function(o){ st.dur+=o.c.duration||0; if(o.missed) st.missed++; else if(o.analyzed&&!o.opp) st.nonlead++;
+    if(o.opp){ st.opp++; if(o.booked) st.bk++; } if(o.notBookedOpp){ st.lost++; if(o.reasonSub) st.rs[o.reasonSub]=(st.rs[o.reasonSub]||0)+1; }
+    if(o.opp&&o.score!=null){ st.sc+=o.score; st.scn++; } });
+  st.conv=st.opp?rate(st.bk,st.opp):null; st.avgLen=st.n?Math.round(st.dur/st.n):0; st.avgSc=st.scn?Math.round(st.sc/st.scn):null;
+  var t=Object.keys(st.rs).sort(function(a,b){return st.rs[b]-st.rs[a];})[0]; st.top=t?{sub:t,main:driverCategory(t),n:st.rs[t]}:null;
+  return st;
+}
+var CAMP_OPEN={};
+function toggleCamp(k){ CAMP_OPEN[k]=!CAMP_OPEN[k]; renderCampaigns(); }
+function campRow(label, st, cls, extra, fi, tog){
+  return '<tr class="'+cls+'">'+
+    '<td class="dl">'+(tog||'')+(fi!=null?'<a href="javascript:void(0)" onclick="goDF('+fi+')">'+label+'</a>':label)+(extra||'')+'</td>'+
+    '<td class="num">'+st.n+'</td><td class="num">'+st.opp+'</td><td class="num g">'+st.bk+'</td><td class="num r">'+st.lost+'</td>'+
+    '<td class="conv">'+(st.conv==null?'<span class="mut">--</span>':'<div class="cbar"><span style="width:'+st.conv+'%;background:'+sc(st.conv)+'"></span></div><b>'+st.conv+'%</b>')+'</td>'+
+    '<td class="num mutc">'+(st.nonlead+st.missed)+'</td>'+
+    '<td class="top">'+(st.top?esc(st.top.sub)+' <span class="mut">('+st.top.n+')</span>':'<span class="mut">--</span>')+'</td>'+
+    '<td class="num">'+(st.avgSc!=null?'<b style="color:'+sc(st.avgSc)+'">'+st.avgSc+'</b>':'<span class="mut">--</span>')+'</td>'+
+    '<td class="num">'+fmt(st.avgLen)+'</td></tr>';
+}
+function renderCampaigns(){
+  var el=document.getElementById('campBody'); if(!el) return;
+  if(!calls.length){ el.innerHTML='<div class="empt">No paid calls in range.</div>'; return; }
+  var N=calls.map(nz);
+  var head='<tr><th>Campaign / keyword</th><th class="num">Calls</th><th class="num">Opp.</th><th class="num">Booked</th><th class="num">Not booked</th><th>Conversion</th><th class="num" title="Missed calls + non-patient calls (wrong numbers, spam, vendors)">Missed / non-lead</th><th>Top not-booked reason</th><th class="num">Front desk</th><th class="num">Avg len</th></tr>';
+  // campaigns → keywords
+  var byC=bucket(N,function(o){return campName(o.c);});
+  var campHtml=Object.keys(byC).sort(function(a,b){return byC[b].length-byC[a].length;}).map(function(cn){
+    var list=byC[cn], st=kwStats(list), open=!!CAMP_OPEN[cn];
+    var byK=bucket(list,function(o){ var k=kwNorm(o.c.keywords); return k?k.term:'(no keyword data)'; });
+    var kids=Object.keys(byK).length>1 || !byK['(no keyword data)'];
+    var tog=kids?'<button class="dtog" onclick="toggleCamp(\''+cn.replace(/'/g,"\\'")+'\')">'+(open?'▾':'▸')+'</button>':'<span class="dtog-sp"></span>';
+    var fi=df('Campaign: '+cn,function(o){return campName(o.c)===cn;});
+    var r=campRow(esc(cn),st,'dmain'+(open?' open':''),'',fi,tog);
+    if(open&&kids){ r+=Object.keys(byK).sort(function(a,b){return byK[b].length-byK[a].length;}).map(function(k){
+      var ks=kwStats(byK[k]), ki=df('Keyword: '+k,function(o){ var z=kwNorm(o.c.keywords); return campName(o.c)===cn && (z?z.term:'(no keyword data)')===k; });
+      return campRow(esc(k),ks,'dsub','',ki,'<span class="dtog-sp"></span>'); }).join(''); }
+    return r; }).join('');
+  // keywords across campaigns
+  var byK=bucket(N.filter(function(o){return kwNorm(o.c.keywords);}),function(o){return kwNorm(o.c.keywords).term;});
+  var kwRows=Object.keys(byK).map(function(k){ var m={}; byK[k].forEach(function(o){ m[kwNorm(o.c.keywords).match]=1; }); return {k:k, st:kwStats(byK[k]), match:Object.keys(m).join(' / ')}; })
+    .sort(function(a,b){return b.st.n-a.st.n;});
+  var noKw=N.filter(function(o){return !kwNorm(o.c.keywords);}).length;
+  var allOpp=N.filter(function(o){return o.opp;}), allBk=allOpp.filter(function(o){return o.booked;}).length, acct=rate(allBk,allOpp.length);
+  var winners=kwRows.filter(function(r){return r.st.bk>0;}).sort(function(a,b){return b.st.bk-a.st.bk||b.st.conv-a.st.conv;}).slice(0,8);
+  var leakers=kwRows.filter(function(r){return r.st.opp>=2 && r.st.conv<acct;}).sort(function(a,b){return b.st.lost-a.st.lost;}).slice(0,8);
+  var junk=kwRows.filter(function(r){return r.st.nonlead>=2 && r.st.nonlead>=r.st.opp;}).sort(function(a,b){return b.st.nonlead-a.st.nonlead;}).slice(0,8);
+  var strip=function(title,sub,dot,rows,val){ return '<div class="dcard"><h3><span class="sdot" style="background:'+dot+'"></span>'+title+'</h3><div class="csub">'+sub+'</div>'+
+    (rows.length?'<div class="srows">'+rows.map(function(r){ var fi=df('Keyword: '+r.k,function(o){var z=kwNorm(o.c.keywords);return z&&z.term===r.k;});
+      return '<div class="srw"><a href="javascript:void(0)" onclick="goDF('+fi+')">'+esc(r.k)+'</a><span>'+val(r)+'</span></div>'; }).join('')+'</div>':'<div class="empt small">None yet.</div>')+'</div>'; };
+  var kwHtml=kwRows.map(function(r){ var fi=df('Keyword: '+r.k,function(o){var z=kwNorm(o.c.keywords);return z&&z.term===r.k;});
+    return campRow(esc(r.k),r.st,'dmain','<span class="mtag">'+esc(r.match)+'</span>',fi,'<span class="dtog-sp"></span>'); }).join('');
+  el.innerHTML=
+    '<div class="camp-note2">Conversion here is the same as on the Overview: <b>booked ÷ opportunities</b>. Wrong numbers, spam, vendors and missed calls are counted separately under <b>Missed / non-lead</b>, so a keyword is judged only on real patients. Account conversion: <b>'+acct+'%</b> ('+allBk+' of '+allOpp.length+'). '+noKw+' of '+N.length+' calls carry no keyword (LSA, call assets and untracked numbers) and roll up to their campaign only. Click any name to open its calls.</div>'+
+    '<div class="drow three">'+
+      strip('Keywords booking patients','Most new appointments','#1D9E75',winners,function(r){return '<b class="g">'+r.st.bk+' booked</b> · '+r.st.conv+'%';})+
+      strip('Keywords under-converting','2+ opportunities, below the '+acct+'% account rate — bid-down or landing/handling review','#C2413F',leakers,function(r){return '<b class="r">'+r.st.lost+' not booked</b> · '+r.st.conv+'%';})+
+      strip('Keywords attracting non-patients','Mostly wrong numbers, spam or vendors — negative-keyword candidates','#B7791F',junk,function(r){return '<b style="color:#8A5A12">'+r.st.nonlead+' non-lead</b> of '+r.st.n;})+
+    '</div>'+
+    '<div class="dcard"><h3>By campaign</h3><div class="csub">Expand a campaign to see its keywords.</div><div class="dscroll"><table class="dtab ctab"><thead>'+head+'</thead><tbody>'+campHtml+'</tbody></table></div></div>'+
+    '<div class="dcard" style="margin-top:12px"><h3>By keyword</h3><div class="csub">All campaigns combined; match types merged per search term.</div><div class="dscroll"><table class="dtab ctab"><thead>'+head.replace('Campaign / keyword','Keyword')+'</thead><tbody>'+(kwHtml||'<tr><td colspan="10" class="empt-row">No keyword data on these calls.</td></tr>')+'</tbody></table></div></div>';
+}
 
 
 // ── AUTO-LAUNCH ───────────────────────────────────────────────────────────────
