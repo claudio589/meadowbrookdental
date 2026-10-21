@@ -2544,9 +2544,11 @@ function renderOps(){
       '<div class="owhy"><div class="olbl">Reason</div><div>'+(o.reasonMain?esc(o.reasonMain)+' <span class="mut">›</span> '+esc(o.reasonSub):'<span class="mut">--</span>')+'</div>'+
         (x.summary?'<div class="osum">'+esc(x.summary)+'</div>':'')+'</div>'+
       '<div class="oact"><div class="olbl">Next action</div><div>'+(action?esc(action):'<span class="mut">Review call</span>')+'</div></div>'+
-      '<div class="ometa">'+(o.score!=null?'<span>Front desk <b style="color:'+sc(o.score)+'">'+o.score+'</b></span>':'')+(x.lead_score!=null?'<span>Lead '+x.lead_score+'</span>':'')+'<a href="javascript:void(0)" onclick="goDF('+fi+')">View call →</a></div></div>'+(c.recording?'<div class="orec">'+recPlayer(c)+'</div>':'')+'</div>';
+      '<div class="ometa">'+(o.score!=null?'<span>Front desk <b style="color:'+sc(o.score)+'">'+o.score+'</b></span>':'')+(x.lead_score!=null?'<span>Lead '+x.lead_score+'</span>':'')+'<a href="javascript:void(0)" onclick="goDF('+fi+')">View call →</a></div></div>'+(c.recording?'<div class="orec">'+recPlayer(c,'orec-')+'</div>':'')+'</div>';
   }).join('');
-  document.getElementById('opslist').innerHTML = bar + (cards || '<div class="empt">'+(calls.length?'No opportunities match these filters.':'Awaiting calls…')+'</div>');
+  var _ol=document.getElementById('opslist'), _keep=[].slice.call(_ol.querySelectorAll('.recbox')).filter(function(b){ var a=b.querySelector('audio'); return a && a.currentTime>0; });
+  _ol.innerHTML = bar + (cards || '<div class="empt">'+(calls.length?'No opportunities match these filters.':'Awaiting calls…')+'</div>');
+  _keep.forEach(function(b){ var n=document.getElementById(b.id); if(n) n.replaceWith(b); });
 }
 
 // transcript display: speaker turns on their own lines
@@ -2576,30 +2578,30 @@ function setF(f,el){ activeF=f; document.querySelectorAll('#view-calls .pill').f
 function setSearch(v){ CL.search=(v||'').toLowerCase().trim(); renderCalls(); }
 function setSort(v){ CL.sort=v; renderCalls(); }
 function toggleRow(id){ CL.open[id]=!CL.open[id]; var c=calls.find(function(z){return z.id===id;}); if(c) refreshCard(c); }
-function refreshCard(c){ var el=document.getElementById('r-'+c.id); if(!el) return; var au=el.querySelector('audio'); if(au && !au.paused) return; el.outerHTML = buildRow(c); }
+function refreshCard(c){ var el=document.getElementById('r-'+c.id); if(!el) return; var box=el.querySelector('.recbox'), au=box&&box.querySelector('audio'); if(au && !au.paused) return; el.outerHTML = buildRow(c); if(au && au.currentTime>0){ var n=document.getElementById(box.id); if(n) n.replaceWith(box); } }
 
 // ── RECORDING PLAYBACK ───────────────────────────────────────────────────────
 // CallRail recording links are short-lived signed URLs, so they are fetched on
 // click (through the server proxy — the token never reaches the browser).
 var REC_URL = {};
-function recPlayer(c){
+function recPlayer(c,pfx){ pfx=pfx||'rec-';
   if(!c.recording) return '<div class="recbox mut">No recording on this call.</div>';
-  return '<div class="recbox" id="rec-'+c.id+'" onclick="event.stopPropagation()">'+
-    '<button class="recbtn" onclick="playRec(\''+c.id+'\')">▶ Play recording</button>'+
+  return '<div class="recbox" id="'+pfx+c.id+'" onclick="event.stopPropagation()">'+
+    '<button class="recbtn" onclick="playRec(\''+c.id+'\',\''+pfx+'\')">▶ Play recording</button>'+
     '<span class="mut">'+fmt(c.duration||0)+'</span></div>';
 }
-async function playRec(id){
-  var c=calls.find(function(z){return z.id===id;}); var box=document.getElementById('rec-'+id); if(!c||!box) return;
+async function playRec(id,pfx){ pfx=pfx||'rec-';
+  var c=calls.find(function(z){return z.id===id;}); var box=document.getElementById(pfx+id); if(!c||!box) return;
   box.innerHTML='<span class="mut">Loading recording…</span>';
   var url=REC_URL[id]; if(!url){ url=await getSignedUrl(c); if(url) REC_URL[id]=url; }
   if(!url){ box.innerHTML='<span class="mut">Recording unavailable — open it in CallRail.</span>'; return; }
   box.innerHTML='<audio controls autoplay preload="auto" src="'+esc(url)+'"></audio>'+
-    '<div class="recspd">'+[1,1.25,1.5,2].map(function(r){ return '<button class="'+(r===1?'on':'')+'" onclick="recSpeed(\''+id+'\','+r+',this)">'+r+'×</button>'; }).join('')+'</div>';
+    '<div class="recspd">'+[1,1.25,1.5,2].map(function(r){ return '<button class="'+(r===1?'on':'')+'" onclick="recSpeed(\''+pfx+id+'\','+r+',this)">'+r+'×</button>'; }).join('')+'</div>';
   var au=box.querySelector('audio');
-  au.addEventListener('error',function(){ delete REC_URL[id]; box.innerHTML='<span class="mut">Recording link expired — </span><button class="recbtn" onclick="playRec(\''+id+'\')">Retry</button>'; });
+  au.addEventListener('error',function(){ delete REC_URL[id]; box.innerHTML='<span class="mut">Recording link expired — </span><button class="recbtn" onclick="playRec(\''+id+'\',\''+pfx+'\')">Retry</button>'; });
   document.querySelectorAll('audio').forEach(function(a){ if(a!==au) a.pause(); });   // one call at a time
 }
-function recSpeed(id,r,btn){ var box=document.getElementById('rec-'+id); var au=box&&box.querySelector('audio'); if(!au) return; au.playbackRate=r; box.querySelectorAll('.recspd button').forEach(function(b){b.classList.remove('on');}); btn.classList.add('on'); }
+function recSpeed(boxId,r,btn){ var box=document.getElementById(boxId); var au=box&&box.querySelector('audio'); if(!au) return; au.playbackRate=r; box.querySelectorAll('.recspd button').forEach(function(b){b.classList.remove('on');}); btn.classList.add('on'); }
 
 
 var OUT_STYLE = {'New Appointment Booked':['Booked','#12805c','#E3F4EC'],'Rescheduled':['Rescheduled','#12805c','#E3F4EC'],'Confirmed Existing':['Confirmed','#185FA5','#E6F1FB'],
@@ -2692,7 +2694,10 @@ function renderCalls(){
     '<span class="mut">* = not a patient opportunity, partial scorecard</span>';
   var el=document.getElementById('clist');
   if(!N.length){ el.innerHTML='<div class="empt">No calls match these filters.</div>'; return; }
+  // keep a recording that is playing (or paused mid-way) alive across re-renders
+  var keep=[].slice.call(el.querySelectorAll('.recbox')).filter(function(b){ var a=b.querySelector('audio'); return a && a.currentTime>0; });
   el.innerHTML='<div class="lhead"><div>When</div><div>Caller</div><div>Channel</div><div>Procedure</div><div>Outcome</div><div>Reason</div><div>Score</div><div></div></div>'+N.map(function(o){return buildRow(o.c);}).join('');
+  keep.forEach(function(b){ var n=document.getElementById(b.id); if(n) n.replaceWith(b); });
 }
 
 // ── Campaigns & keywords: opportunity-based, campaign → keyword drill ─────────
