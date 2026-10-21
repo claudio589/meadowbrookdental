@@ -600,7 +600,7 @@ var AAI_KEY = '';
 //     keep the file private; a shared or hosted copy exposes a spendable key.
 var ANTHROPIC_API_KEY = '';
 var ANALYSIS_MODEL    = 'claude-opus-4-8';
-var ANALYSIS_VER      = 'v6';   // v6: 8-stage front-desk scorecard, dental procedure taxonomy, main/secondary reasons (booked + not booked), opportunity buckets
+var ANALYSIS_VER      = 'v6.1';   // v6: 8-stage front-desk scorecard, dental procedure taxonomy, main/secondary reasons (booked + not booked), opportunity buckets
 
 // ── TAXONOMIES (the ONLY labels Claude may choose) ───────────────────────────
 var PROCEDURE_TAXONOMY = {
@@ -729,7 +729,7 @@ var ANALYSIS_PROMPT = [
 '8. ISSUE RESOLUTION (0-10): the caller’s actual question/issue was fully answered or resolved (6); recap and courteous close, caller knows exactly what happens next (4).',
 'NOT-APPLICABLE RULES: for non-opportunity calls (wrong number, spam, vendor, job seeker) mark discovery, objection, solution_finding, solution_presenting and closing na = true and grade opening, greeting and resolution only. For existing-patient admin calls (confirm / reschedule / billing) score what applies; closing is never na when a reschedule was possible.',
 '',
-'PROCEDURE: choose the single most specific procedure from the allowed list (e.g. "Full-Arch / All-on-X" rather than "Single Implant" when the caller is missing most teeth; "Toothache / Pain" for an emergency pain call). Non-clinical calls use the Non-Clinical labels.',
+'PROCEDURE: choose the single most specific procedure from the allowed list (e.g. "Full-Arch / All-on-X" rather than "Single Implant" when the caller is missing most teeth; "Toothache / Pain" for an emergency pain call). Non-clinical calls use the Non-Clinical labels. A PROSPECTIVE patient asking whether we take their insurance, what something costs, or whether we have availability is classified by the CARE they want, never as Billing / Insurance Question: use the treatment they named, or New Patient Exam & Cleaning when they want to become a patient without naming a treatment, or Emergency Exam (Unspecified) when they mention pain/urgency. Billing / Insurance Question is ONLY for existing patients calling about a bill, claim or coverage of past work.',
 '',
 'REASONS — MAIN and SECONDARY categories. You choose the SECONDARY reason (primary_reason); its MAIN category is fixed by the taxonomy below. Add contributing_reason only if a genuinely distinct second factor from the same set mattered; otherwise "None".',
 'Booked reasons (New Appointment Booked / Rescheduled / Confirmed Existing):',
