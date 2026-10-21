@@ -458,6 +458,10 @@ html body .src-n{font-weight:700;color:var(--navy)}
 var ACCOUNT_ID    = 'ACC9bc1bc52d85643d99cbf9339cc12168d'; // OM Performance Marketing
 var ACCOUNT_MATCH = 'om performance marketing';            // fallback only
 var PRACTICE_TZ   = 'America/New_York';                    // all call times shown in practice time
+// Words AssemblyAI should transcribe correctly (it was hearing "Medwork" / "Matterport" for Meadowbrook).
+var KEYTERMS = ['Meadowbrook','Meadowbrook Dental','Meadowbrook Dental Care','Meadowbrook Dentistry','Mineola','Plainview','Long Island',
+  'Delta Dental','MetLife','Aetna','Cigna','Guardian','United Concordia','Humana','Healthplex','DentaQuest','WellCare','Fidelis','Medicaid',
+  'CareCredit','Cherry financing','Invisalign','All-on-4','All-on-X','periodontal','scaling and root planing','panoramic x-ray','new patient special'];
 var LOCATIONS = [
   {key:'mineola',   id:'COM019dbb231ba67169a1e7a16797210a9d', name:'Meadowbrook Dental | Mineola',   city:'Mineola',   accent:'#185FA5', bg:'#e6f1fb'},
   {key:'plainview', id:'COM019db65239167545bae62b1bf7340d57', name:'Meadowbrook Dental | Plainview', city:'Plainview', accent:'#1D9E75', bg:'#e1f5ee'}
@@ -994,7 +998,7 @@ async function getSignedUrl(call) {
 
 async function aaiTranscribe(mp3Url) {
   try {
-    var r1 = await apiPost('/transcribe', {op:'create', audio_url: mp3Url});
+    var r1 = await apiPost('/transcribe', {op:'create', audio_url: mp3Url, keyterms: KEYTERMS});
     if(!r1.ok) return null;
     var job = await r1.json();
     if(!job.id) return null;
