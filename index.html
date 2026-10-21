@@ -367,6 +367,35 @@ html body .src-n{font-weight:700;color:var(--navy)}
 .recspd button.on{background:var(--navy);border-color:var(--navy);color:#fff}
 .orec{padding:0 1rem .8rem}.orec .recbox{background:#F8FAFC}
 @media print{.recbox,.orec{display:none !important}}
+.fdleg{display:flex;flex-wrap:wrap;gap:6px 14px;margin:.2rem 0 .6rem;font-size:11px;color:#5B6B78}
+.fdleg span{display:inline-flex;align-items:center;gap:5px}.fdleg i{width:9px;height:9px;border-radius:2px;display:inline-block}
+.sdot2{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:7px;vertical-align:middle;flex:none}
+.sbar2 i.t60{background:#C3CCD5}
+.stdlink{display:inline-block;margin-top:10px;font-size:12px;font-weight:600;color:var(--accent);text-decoration:none}
+#ovStandard{margin-bottom:1rem}
+.fdtop{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+.fdtog,.stdbtn{font:inherit;font-size:11.5px;font-weight:600;border:1px solid var(--border);background:#fff;color:var(--navy);border-radius:6px;padding:5px 10px;cursor:pointer;white-space:nowrap}
+.stdbtn{margin-left:auto;float:right;padding:2px 8px;font-size:10.5px;text-transform:none;letter-spacing:0}
+.fdgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:.4rem}
+.fdc{border:1px solid var(--border);border-top:4px solid;border-radius:8px;padding:.85rem .9rem;background:#fff;display:flex;flex-direction:column;min-width:0}
+.fdh{display:flex;align-items:flex-start;gap:10px;margin-bottom:6px}
+.fdn{flex:none;width:22px;height:22px;border-radius:50%;background:var(--navy);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.fdh h4{font-size:13px;color:var(--navy);margin:0}.fdp{font-size:10.5px;color:var(--faint)}
+.fdr{margin-left:auto;text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:3px}.fdr b{font-size:16px}
+.fdb{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:2px 7px;border-radius:10px;white-space:nowrap}
+.fdg{font-size:12px;color:#2B3A48;line-height:1.5;margin-bottom:8px}
+.fdl{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--faint);margin:8px 0 4px}
+.fdx{list-style:none;margin:0;padding:0}.fdx li{display:flex;justify-content:space-between;gap:10px;font-size:11.5px;color:#2B3A48;line-height:1.45;padding:3px 0;border-bottom:1px dashed var(--line-soft)}
+.fdx li b{flex:none;color:var(--navy);font-size:11px;min-width:18px;text-align:right}
+.fdna{font-size:11px;color:var(--faint);margin-top:4px;font-style:italic}
+.fde{font-size:11.5px;color:#2B3A48;background:#F6F8FA;border-left:3px solid var(--accent);border-radius:4px;padding:6px 8px;line-height:1.5;font-style:italic}
+.fdm{font-size:11.5px;color:#8A3A35;line-height:1.5}
+.fdseg{display:flex;height:9px;border-radius:5px;overflow:hidden;background:#EDF1F5;margin-top:2px}.fdseg span{display:block;height:100%;cursor:pointer}
+.fdsc{font-size:11px;color:#5B6B78;margin-top:5px}
+.stx{grid-column:1/-1;font-size:11.5px;color:#2B3A48;background:#F6F8FA;border-radius:6px;padding:6px 8px;line-height:1.5;margin:2px 0 4px}
+@media(max-width:1280px){.fdgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.fdgrid{grid-template-columns:1fr}.fdtop{flex-direction:column}}
+@media print{.fdtog,.stdbtn{display:none !important}.fdgrid{grid-template-columns:repeat(2,1fr) !important}.fdc{break-inside:avoid}}
 @media print{.kcard,.ccard,.call-card,html body .src-wrap{box-shadow:none !important}#kstrip{grid-template-columns:repeat(6,1fr) !important}.cwrap{height:180px !important}}
 </style>
 </head>
@@ -408,6 +437,7 @@ html body .src-n{font-weight:700;color:var(--navy)}
   <div id="view-overview" class="view active">
     <div class="kgrid" id="kstrip"></div>
     <div class="crow two" id="ovTop"></div>
+    <div id="ovStandard"></div>
     <div id="srcNums"></div>
     <div id="ovDrill"></div>
     <div class="crow split" id="ovBottom"></div>
@@ -2356,7 +2386,7 @@ function renderKpis(){
     tile(bookedNew,'New appointments','+'+N.filter(function(o){return o.existingKept;}).length+' existing kept / rescheduled','#1D9E75','',df('New appointments booked',function(o){return o.newBooked;}))+
     tile(opp.length?conv+'%':'--','Conversion',oppBooked+' booked of '+opp.length+' opportunities',opp.length?sc(conv):'var(--muted)','',null)+
     tile(unbooked,'Unbooked opportunities','+'+(t-ans)+' missed calls to call back',unbooked?'#C2413F':'#1D9E75','',df('Unbooked opportunities',function(o){return o.notBookedOpp;}))+
-    tile(avg!=null?avg:'--','Front-desk score',scored.length+' of '+analyzed+' calls scored · strict 8-stage',avg!=null?sc(avg):'var(--muted)','',null);
+    tile(avg!=null?avg:'--','Front-desk score',(avg!=null?fdBand(avg).label+' · ':'')+scored.length+' calls scored',avg!=null?fdColor(avg):'var(--muted)','',null);
 }
 
 // ── generic drill table: main rows expand into secondary rows ─────────────────
@@ -2456,7 +2486,7 @@ function renderHeat(N){
 function renderCharts(){ try{ renderSources(); rebuildDriverOptions(); renderCampaigns(); }catch(e){ console.error(e); }
   ["oc","sr","pt"].forEach(sd); renderKpis();
   var N=allN(), A=N.filter(function(o){return o.analyzed||o.missed;});
-  document.getElementById('ovTop').innerHTML = renderFunnel(N) + renderStages(N);
+  document.getElementById('ovTop').innerHTML = renderFunnel(N) + renderStages(N); renderStandard(N);
 
   // procedures: category → specific procedure
   var pc=bucket(A.filter(function(o){return o.analyzed && !o.missed;}),function(o){return o.procCat;});
@@ -2614,7 +2644,7 @@ function outPill(o){
 function scoreCell(o){
   if(o.score==null) return '<span class="mut">—</span>';
   if(o.analyzed && !o.opp) return '<span class="mut" title="Not a patient opportunity — scored on opening, greeting and resolution only">'+o.score+'*</span>';
-  return '<b style="color:'+sc(o.score)+'">'+o.score+'</b>';
+  return '<b style="color:'+fdColor(o.score)+'">'+o.score+'</b>';
 }
 function buildRow(c){
   var o=nz(c), x=o.x||{}, open=!!CL.open[c.id];
@@ -2641,12 +2671,13 @@ function buildDetail(c,o){
     .filter(function(m){return m[1];}).map(function(m){ return '<div><span>'+m[0]+'</span>'+esc(m[1])+'</div>'; }).join('');
   var stages='';
   if(o.analyzed && x.scorecard && x.scorecard.length){
-    stages='<div class="dsec"><div class="dsh">Front-desk scorecard <b style="color:'+(o.score!=null?sc(o.score):'#7A8794')+'">'+(o.score!=null?o.score+'/100':'—')+'</b>'+(o.opp?'':'<span class="mut"> · not a patient opportunity</span>')+'</div>'+
-      x.scorecard.map(function(d){ var p=d.max?Math.round(d.score/d.max*100):0;
-        return '<div class="stg'+(d.na?' na':'')+'"><div class="stn">'+esc(d.label)+'</div>'+
-          '<div class="stb"><span style="width:'+(d.na?0:p)+'%;background:'+sc(p)+'"></span></div>'+
+    stages='<div class="dsec"><div class="dsh">Front-desk scorecard <b style="color:'+(o.score!=null?fdColor(o.score):'#7A8794')+'">'+(o.score!=null?o.score+'/100':'—')+'</b>'+(o.opp?'':'<span class="mut"> · not a patient opportunity</span>')+'<button class="stdbtn" onclick="event.stopPropagation();toggleCallStd(\''+c.id+'\')">'+(CL_STD[c.id]?'Hide':'Show')+' standard</button></div>'+bandLegend()+
+      x.scorecard.map(function(d){ var p=d.max?Math.round(d.score/d.max*100):0, bd=d.na?FD_NA:fdBand(p), sd=STAGE_STANDARD[d.key];
+        return '<div class="stg'+(d.na?' na':'')+'" title="'+esc(sd?sd.goal:'')+'"><div class="stn"><i class="sdot2" style="background:'+bd.color+'"></i>'+esc(d.label)+'</div>'+
+          '<div class="stb"><span style="width:'+(d.na?0:p)+'%;background:'+bd.color+'"></span></div>'+
           '<div class="stv">'+(d.na?'n/a':d.score+'/'+d.max)+'</div>'+
-          '<div class="ste">'+(d.na?'<span class="mut">Not applicable to this call</span>':(d.evidence&&d.evidence!=='not observed'?'“'+esc(d.evidence)+'”':'<span class="mut">Not observed</span>'))+'</div></div>'; }).join('')+
+          '<div class="ste">'+(d.na?'<span class="mut">Not applicable to this call</span>':(d.evidence&&d.evidence!=='not observed'?'“'+esc(d.evidence)+'”':'<span class="mut">Not observed</span>'))+'</div>'+
+          (CL_STD[c.id]&&sd?'<div class="stx"><b>Expected:</b> '+sd.expect.map(function(e){return esc(e[0])+' ('+e[1]+')';}).join(' · ')+'<br><span class="mut">Sounds like: '+esc(sd.example)+'</span></div>':'')+'</div>'; }).join('')+
       ((x.strengths&&x.strengths.length)?'<div class="dwell">Did well: '+esc(x.strengths.join(' · '))+'</div>':'')+'</div>';
   }
   var why='';
@@ -2771,6 +2802,135 @@ function renderCampaigns(){
     '<div class="dcard"><h3>By campaign</h3><div class="csub">Expand a campaign to see its keywords.</div><div class="dscroll"><table class="dtab ctab"><thead>'+head+'</thead><tbody>'+campHtml+'</tbody></table></div></div>'+
     '<div class="dcard" style="margin-top:12px"><h3>By keyword</h3><div class="csub">All campaigns combined; match types merged per search term.</div><div class="dscroll"><table class="dtab ctab"><thead>'+head.replace('Campaign / keyword','Keyword')+'</thead><tbody>'+(kwHtml||'<tr><td colspan="10" class="empt-row">No keyword data on these calls.</td></tr>')+'</tbody></table></div></div>';
 }
+
+
+// ══ FRONT-DESK STANDARD — what each scorecard stage expects ══════════════════
+// Same rubric Claude grades against (see ANALYSIS_PROMPT), written for the team.
+// Colour code is shared by the Overview, the standard cards and every call:
+//   green ≥ 80% meets standard · amber 60–79% needs coaching · red < 60% below standard · grey not applicable
+var FD_BANDS = [
+  {min:80, key:'meets', label:'Meets standard', color:'#1D9E75', bg:'#E3F4EC'},
+  {min:60, key:'coach', label:'Needs coaching', color:'#B7791F', bg:'#FBF3E4'},
+  {min:0,  key:'below', label:'Below standard', color:'#C2413F', bg:'#FBEAEA'}
+];
+var FD_NA = {key:'na', label:'Not applicable', color:'#A9B4BF', bg:'#F1F4F7'};
+function fdBand(p){ if(p==null) return FD_NA; for(var i=0;i<FD_BANDS.length;i++){ if(p>=FD_BANDS[i].min) return FD_BANDS[i]; } return FD_BANDS[FD_BANDS.length-1]; }
+function fdColor(p){ return fdBand(p).color; }
+
+var STAGE_STANDARD = {
+  opening: {
+    goal: 'The call is answered live, promptly and by someone ready to help.',
+    expect: [['Answered live within 3 rings, with no unexplained hold or phone-tree loop',3],['Agent is present and ready: no side conversations, no “hold on” before the greeting',2]],
+    example: 'If a hold is unavoidable: “Thank you for calling Meadowbrook Dental, may I place you on a brief hold?” and back within 30–60 seconds.',
+    misses: ['Long ring or hold before anyone speaks','Starting mid-conversation with a colleague']
+  },
+  greeting: {
+    goal: 'The caller immediately knows where they called, who they are speaking to, and that they are welcome.',
+    expect: [['Says the practice name',3],['Gives their own name',3],['Offers to help (“How can I help you today?”)',2],['Warm, unhurried, professional tone',2]],
+    example: '“Thank you for calling Meadowbrook Dental, this is [your name]. How can I help you today?”',
+    misses: ['“Dental office, hold please”','No agent name','Flat or rushed tone']
+  },
+  discovery: {
+    goal: 'Understand the caller’s need and capture what is needed to book before offering anything.',
+    expect: [['Asks the reason for the call / chief concern',4],['Asks if they are a new or existing patient',3],['Captures full name plus phone or date of birth',4],['Asks about insurance or how they plan to pay',4],['Probes clinically: which tooth, pain level, how long, swelling, last visit',3],['Asks how they heard about us',2]],
+    example: '“Are you a new patient with us? … Which tooth is bothering you, and how long has it been hurting? … Do you have dental insurance you would like us to check?”',
+    misses: ['Jumping straight to “we have nothing until next month”','Never asking for name or callback number','No insurance question, so it surprises the caller later']
+  },
+  objection: {
+    goal: 'When the caller hesitates (insurance, price, timing, fear), keep the conversation alive and offer a real path forward.',
+    expect: [['Acknowledges and empathizes with the concern',4],['Clarifies the real concern behind it',3],['Offers a concrete alternative: self-pay or new-patient special, membership plan, CareCredit / financing, other times, comfort or sedation options',6],['Confirms the concern is resolved before moving on',2]],
+    example: '“I understand. We are out of network with that plan, but our new-patient visit is self-pay friendly and we offer CareCredit. Would that work for you?”',
+    misses: ['“No, we don’t take that” and the call ends','Quoting a price with no value or option attached','Letting “I’ll think about it” end the call'],
+    na: 'Not applicable when the caller raised no objection.'
+  },
+  solution_finding: {
+    goal: 'Match the caller’s need to the right appointment, provider and urgency.',
+    expect: [['Chooses the right visit type, provider and urgency (same-day emergency exam for pain, implant consult for missing teeth, hygiene for a cleaning)',6],['Checks that it is feasible: availability, coverage, provider fit',4]],
+    example: '“With pain like that we want to see you today. The doctor has an emergency exam open at 3:30 today.”',
+    misses: ['Booking a routine cleaning for a pain emergency','Offering the next generic opening without matching the need']
+  },
+  solution_presenting: {
+    goal: 'The caller understands what will happen at the visit and why it is worth coming in.',
+    expect: [['Explains what the visit involves and its value to the caller',5],['Is clear on cost, coverage and what to expect, without stalling',5]],
+    example: '“At the visit the doctor will take an x-ray, find what is causing the pain and walk you through options and costs before anything is done.”',
+    misses: ['No explanation of the visit','Vague or evasive about cost','Overloading with jargon']
+  },
+  closing: {
+    goal: 'Ask for the appointment and secure a concrete next step on every bookable call.',
+    expect: [['Asks for the appointment',6],['Offers two specific options (“Tuesday at 10 or Thursday at 2?”)',5],['Confirms date, time and details back to the caller',5],['If not booked: secures a tentative hold, a callback time, or sends forms / links',4]],
+    example: '“I have Tuesday at 10 or Thursday at 2, which works better for you? … Great, Thursday at 2 with the doctor. I’ll text you the forms now.”',
+    misses: ['“Call us back when you’re ready”','Asking “when are you free?” with no options','No confirmation of the booked time']
+  },
+  resolution: {
+    goal: 'The caller’s question is fully answered and they know exactly what happens next.',
+    expect: [['The caller’s actual question or issue is resolved',6],['Recaps the next steps and closes courteously',4]],
+    example: '“You’re all set for Thursday at 2. You’ll get a text with forms and directions. Is there anything else I can help you with today?”',
+    misses: ['Hanging up with the question unanswered','No recap, so the caller is unsure what was agreed']
+  }
+};
+
+function bandLegend(){
+  return '<div class="fdleg">'+FD_BANDS.concat([FD_NA]).map(function(b){ return '<span><i style="background:'+b.color+'"></i>'+b.label+(b.key==='meets'?' (≥80%)':b.key==='coach'?' (60–79%)':b.key==='below'?' (<60%)':'')+'</span>'; }).join('')+'</div>';
+}
+function stageAgg(N){
+  var scored=N.filter(function(o){return o.analyzed && o.x.scorecard && o.x.scorecard.length && o.x.engine==='claude';});
+  var out={}; STAGES.forEach(function(st){
+    var vals=scored.map(function(o){ return (o.x.scorecard||[]).find(function(d){return d.key===st.key;}); }).filter(function(d){return d && !d.na;});
+    var pct=vals.length?Math.round(vals.reduce(function(s,d){return s+d.score/d.max;},0)/vals.length*100):null;
+    var cnt={meets:0,coach:0,below:0}; vals.forEach(function(d){ cnt[fdBand(Math.round(d.score/d.max*100)).key]++; });
+    out[st.key]={pct:pct, n:vals.length, cnt:cnt};
+  });
+  return {scored:scored.length, by:out};
+}
+function stageFilter(key,bandKey){
+  return function(o){ var d=o.analyzed&&(o.x.scorecard||[]).find(function(z){return z.key===key;}); if(!d||d.na) return false; var k=fdBand(Math.round(d.score/d.max*100)).key; return bandKey ? k===bandKey : k!=='meets'; };
+}
+// Overview scorecard (replaces the earlier version): colour-banded, with the standard on hover
+function renderStages(N){
+  var ag=stageAgg(N);
+  var rows=STAGES.map(function(st){
+    var a=ag.by[st.key], b=fdBand(a.pct), sd=STAGE_STANDARD[st.key];
+    var fi=df(st.label+' — needs coaching or below',stageFilter(st.key));
+    return '<div class="srow" role="button" onclick="goDF('+fi+')" title="'+esc(sd.goal)+' — click for calls below standard">'+
+      '<div class="sname"><i class="sdot2" style="background:'+b.color+'"></i>'+st.label+'<span>'+st.max+' pts</span></div>'+
+      '<div class="sbar2"><span style="width:'+(a.pct||0)+'%;background:'+b.color+'"></span><i style="left:80%"></i><i class="t60" style="left:60%"></i></div>'+
+      '<div class="sval" style="color:'+b.color+'">'+(a.pct==null?'--':a.pct+'%')+'</div>'+
+      '<div class="sweak">'+(a.n?(a.cnt.coach+a.cnt.below)+' to coach':'')+'</div></div>';
+  }).join('');
+  return '<div class="ccard"><h3>Front-desk scorecard</h3><div class="csub">Average per stage across '+ag.scored+' AI-graded calls · lines at 60% and 80% · click a stage for the calls to coach</div>'+bandLegend()+'<div class="stages">'+rows+'</div>'+
+    '<a class="stdlink" href="#fdStandard" onclick="document.getElementById(\'fdStandard\').scrollIntoView({behavior:\'smooth\'});return false;">What each stage expects ↓</a></div>';
+}
+// Full standard: one card per stage with expectations, points, example, common misses and live team results
+var STD_OPEN = true;
+function toggleStd(){ STD_OPEN=!STD_OPEN; try{ localStorage.setItem('fd_std_open', STD_OPEN?'1':'0'); }catch(e){} renderStandard(allN()); }
+try{ if(localStorage.getItem('fd_std_open')==='0') STD_OPEN=false; }catch(e){}
+function renderStandard(N){
+  var el=document.getElementById('ovStandard'); if(!el) return;
+  var ag=stageAgg(N);
+  var cards=STAGES.map(function(st,i){
+    var a=ag.by[st.key], b=fdBand(a.pct), sd=STAGE_STANDARD[st.key], tot=a.n||0;
+    var seg=['meets','coach','below'].map(function(k){ var band=FD_BANDS.find(function(z){return z.key===k;}); var w=tot?a.cnt[k]/tot*100:0;
+      var fi=df(st.label+' — '+band.label, stageFilter(st.key,k));
+      return w?'<span role="button" onclick="goDF('+fi+')" title="'+a.cnt[k]+' calls · '+band.label+'" style="width:'+w+'%;background:'+band.color+'"></span>':''; }).join('');
+    return '<div class="fdc" style="border-top-color:'+b.color+'">'+
+      '<div class="fdh"><span class="fdn">'+(i+1)+'</span><div><h4>'+st.label+'</h4><div class="fdp">'+st.max+' points</div></div>'+
+        '<div class="fdr"><b style="color:'+b.color+'">'+(a.pct==null?'--':a.pct+'%')+'</b><span class="fdb" style="color:'+b.color+';background:'+b.bg+'">'+b.label+'</span></div></div>'+
+      '<div class="fdg">'+esc(sd.goal)+'</div>'+
+      '<div class="fdl">What we expect</div><ul class="fdx">'+sd.expect.map(function(e){ return '<li><span>'+esc(e[0])+'</span><b>'+e[1]+'</b></li>'; }).join('')+'</ul>'+
+      (sd.na?'<div class="fdna">'+esc(sd.na)+'</div>':'')+
+      '<div class="fdl">Sounds like</div><div class="fde">'+esc(sd.example)+'</div>'+
+      '<div class="fdl">Common misses</div><div class="fdm">'+sd.misses.map(esc).join(' · ')+'</div>'+
+      '<div class="fdl">This period</div><div class="fdseg">'+(seg||'<span style="width:100%;background:#EDF1F5"></span>')+'</div>'+
+      '<div class="fdsc">'+(tot?a.cnt.meets+' meet · '+a.cnt.coach+' coach · '+a.cnt.below+' below <span class="mut">of '+tot+' calls</span>':'<span class="mut">No graded calls yet</span>')+'</div>'+
+    '</div>';
+  }).join('');
+  el.innerHTML='<div class="dcard" id="fdStandard"><div class="fdtop"><div><h3>Front-desk standard</h3><div class="csub">The behaviour expected at each stage of a call — the same rubric the AI grades against. Colour shows how the team is doing this period; click a colour segment to open those calls.</div></div>'+
+    '<button class="fdtog" onclick="toggleStd()">'+(STD_OPEN?'Hide':'Show')+' standard</button></div>'+bandLegend()+
+    (STD_OPEN?'<div class="fdgrid">'+cards+'</div>':'')+'</div>';
+}
+// Call log: per-call standard toggle
+var CL_STD = {};
+function toggleCallStd(id){ CL_STD[id]=!CL_STD[id]; var c=calls.find(function(z){return z.id===id;}); if(c) refreshCard(c); }
 
 
 // ── AUTO-LAUNCH ───────────────────────────────────────────────────────────────
